@@ -203,7 +203,7 @@ export default function ToursPage() {
 
             {/* Horizontal Scroll */}
 
-            <div className="horizontal-scroll flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+            <div className="horizontal-scroll flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide">
 
               {category.tours.map((tour, i) => (
 
