@@ -123,21 +123,26 @@ export default function ToursPage() {
 
     sliders.forEach((slider) => {
 
-      const handleMove = (e) => {
+ const handleMove = (e) => {
 
-        const rect = slider.getBoundingClientRect()
+  const rect = slider.getBoundingClientRect()
 
-        const x = e.clientX - rect.left
+  const x = e.clientX - rect.left
 
-        const width = rect.width
+  const width = rect.width
 
-        const center = width / 2
+  const percentage = x / width
 
-        const distance = x - center
+  if (percentage > 0.55) {
 
-        slider.scrollLeft += distance * 0.04
-      }
+    slider.scrollLeft += 18
 
+  } else if (percentage < 0.45) {
+
+    slider.scrollLeft -= 18
+
+  }
+}
       slider.addEventListener("mousemove", handleMove)
 
     })
