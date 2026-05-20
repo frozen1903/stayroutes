@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
+import Fleet from '../components/Fleet'
 
 export default function Home(){
   return(
@@ -8,6 +9,7 @@ export default function Home(){
       <Navbar/>
       <Hero/>
       <Services/>
+      <Fleet/>
 <a
   href="https://wa.me/905555555555"
   className="hidden md:flex fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 transition-all duration-300 text-white w-16 h-16 rounded-full items-center justify-center text-3xl shadow-2xl z-50"
