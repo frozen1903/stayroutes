@@ -14,6 +14,47 @@ export default function Home(){
 >
   💬
 </a>
+     {/* Mobile Bottom Navigation */}
+
+<div className="fixed bottom-0 left-0 w-full md:hidden z-40 px-4 pb-4">
+
+  <div className="bg-black/70 backdrop-blur-2xl border border-white/10 rounded-3xl flex items-center justify-around py-4 shadow-2xl">
+
+    <a
+      href="/"
+      className="flex flex-col items-center text-xs text-white"
+    >
+      <span className="text-2xl mb-1">🏠</span>
+      Home
+    </a>
+
+    <a
+      href="/transfer"
+      className="flex flex-col items-center text-xs text-white"
+    >
+      <span className="text-2xl mb-1">✈️</span>
+      Transfer
+    </a>
+
+    <a
+      href="/tours"
+      className="flex flex-col items-center text-xs text-white"
+    >
+      <span className="text-2xl mb-1">🗺️</span>
+      Tours
+    </a>
+
+    <a
+      href="https://wa.me/905555555555"
+      className="flex flex-col items-center text-xs text-green-400"
+    >
+      <span className="text-2xl mb-1">💬</span>
+      WhatsApp
+    </a>
+
+  </div>
+
+</div> 
     </main>
   )
 }
