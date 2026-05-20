@@ -12,7 +12,7 @@ export default function Hero() {
       ></div>
 
       {/* Gold Glow */}
-      <div className="absolute w-[500px] h-[500px] bg-yellow-500/20 blur-[140px] rounded-full top-[-150px]"></div>
+      <div className="absolute w-[500px] h-[500px] bg-yellow-500/20 blur-[60px] rounded-full top-[-150px]"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl">
@@ -44,7 +44,7 @@ export default function Hero() {
 
           <a
             href="https://wa.me/905555555555"
-            className="border border-white/20 bg-white/10 backdrop-blur-xl hover:bg-white/20 transition-all duration-300 px-10 py-5 rounded-2xl font-semibold text-lg"
+            className="border border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 px-10 py-5 rounded-2xl font-semibold text-lg"
           >
             WhatsApp Reception
           </a>
