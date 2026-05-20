@@ -30,7 +30,7 @@ const items = [
 
 export default function Services() {
   return (
-    <section className="relative z-20 max-w-7xl mx-auto px-6 -mt-24 pb-20">
+    <section className="relative z-20 max-w-7xl mx-auto px-6 mt-10 pb-20">
 
       <div className="grid md:grid-cols-4 gap-6">
 
