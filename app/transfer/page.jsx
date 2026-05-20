@@ -144,9 +144,9 @@ Vehicle: ${vehicle}
             >
 
               <option value="">Select Vehicle</option>
-              <option>Mercedes Vito</option>
-              <option>VIP Minivan</option>
-              <option>Luxury Sedan</option>
+              <option>VIP Mercedes Vito</option>
+              <option>VIP Sprinter</option>
+              
 
             </select>
 
