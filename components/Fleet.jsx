@@ -16,8 +16,6 @@ export default function Fleet() {
   return (
     <section className="max-w-7xl mx-auto px-6 pb-24">
 
-      {/* Heading */}
-
       <div className="text-center mb-14">
 
         <p className="text-yellow-400 uppercase tracking-[4px] mb-4 text-sm">
@@ -34,8 +32,6 @@ export default function Fleet() {
 
       </div>
 
-      {/* Cards */}
-
       <div className="grid md:grid-cols-2 gap-6">
 
         {vehicles.map((item, index) => (
@@ -45,19 +41,13 @@ export default function Fleet() {
             className="relative overflow-hidden rounded-[32px] min-h-[400px] group shadow-2xl"
           >
 
-            {/* Image */}
-
             <img
               src={item.image}
               alt=""
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
             />
 
-            {/* Overlay */}
-
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-
-            {/* Content */}
 
             <div className="relative z-10 h-full flex flex-col justify-end p-8">
 
