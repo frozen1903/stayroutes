@@ -117,38 +117,59 @@ const categories = [
 
 export default function ToursPage() {
 
-  useEffect(() => {
+useEffect(() => {
 
-    const sliders = document.querySelectorAll(".horizontal-scroll")
+  const sliders = document.querySelectorAll(".horizontal-scroll")
 
-    sliders.forEach((slider) => {
+  sliders.forEach((slider) => {
 
- const handleMove = (e) => {
+    let scrollSpeed = 0
 
-  const rect = slider.getBoundingClientRect()
+    const move = () => {
 
-  const x = e.clientX - rect.left
+      slider.scrollLeft += scrollSpeed
 
-  const width = rect.width
+      requestAnimationFrame(move)
+    }
 
-  const percentage = x / width
+    move()
 
-  if (percentage > 0.55) {
+    const handleMove = (e) => {
 
-    slider.scrollLeft += 18
+      const rect = slider.getBoundingClientRect()
 
-  } else if (percentage < 0.45) {
+      const x = e.clientX - rect.left
 
-    slider.scrollLeft -= 18
+      const width = rect.width
 
-  }
-}
-      slider.addEventListener("mousemove", handleMove)
+      const percentage = x / width
 
-    })
+      if (percentage > 0.6) {
 
-  }, [])
+        scrollSpeed = 8
 
+      } else if (percentage < 0.4) {
+
+        scrollSpeed = -8
+
+      } else {
+
+        scrollSpeed = 0
+      }
+    }
+
+    const stopScroll = () => {
+
+      scrollSpeed = 0
+    }
+
+    slider.addEventListener("mousemove", handleMove)
+
+    slider.addEventListener("mouseleave", stopScroll)
+
+  })
+
+}, [])
   return (
     <div className="min-h-screen px-6 pt-32 pb-28">
 
