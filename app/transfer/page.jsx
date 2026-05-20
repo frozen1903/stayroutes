@@ -1,6 +1,7 @@
-"use client"
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+"use client"
+
 import { useState } from "react"
 
 export default function Transfer() {
