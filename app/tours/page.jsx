@@ -1,7 +1,5 @@
 "use client"
 
-import { useEffect } from "react"
-
 const categories = [
   {
     title: "Istanbul Experiences",
@@ -9,7 +7,7 @@ const categories = [
       {
         name: "Bosphorus Dinner Cruise",
         description:
-          "Luxury dinner cruise with live entertainment and Bosphorus skyline views.",
+          "Luxury dinner cruise with Bosphorus skyline views.",
         image:
           "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=2070&auto=format&fit=crop"
       },
@@ -17,7 +15,7 @@ const categories = [
       {
         name: "Luxury Yacht Tour",
         description:
-          "Private yacht experience across the Bosphorus with premium service.",
+          "Private yacht experience with premium concierge service.",
         image:
           "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop"
       },
@@ -25,7 +23,7 @@ const categories = [
       {
         name: "Old City Tour",
         description:
-          "Explore Hagia Sophia, Blue Mosque and Istanbul’s historical landmarks.",
+          "Explore Istanbul’s historical landmarks and culture.",
         image:
           "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=2070&auto=format&fit=crop"
       },
@@ -33,7 +31,7 @@ const categories = [
       {
         name: "Princes Islands Tour",
         description:
-          "Relaxing island escape with beautiful sea views and peaceful atmosphere.",
+          "Peaceful island escape with beautiful sea views.",
         image:
           "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop"
       }
@@ -46,7 +44,7 @@ const categories = [
       {
         name: "Hot Air Balloon Ride",
         description:
-          "Experience magical sunrise balloon rides above Cappadocia valleys.",
+          "Sunrise balloon ride above Cappadocia valleys.",
         image:
           "https://images.unsplash.com/photo-1641128322288-6b9b0a912055?q=80&w=2070&auto=format&fit=crop"
       },
@@ -54,7 +52,7 @@ const categories = [
       {
         name: "ATV Safari",
         description:
-          "Adventure ride through valleys, caves and stunning landscapes.",
+          "Adventure ride through caves and valleys.",
         image:
           "https://images.unsplash.com/photo-1516939884455-1445c8652f83?q=80&w=2070&auto=format&fit=crop"
       },
@@ -62,7 +60,7 @@ const categories = [
       {
         name: "Red Tour",
         description:
-          "Visit Cappadocia’s iconic valleys, cave churches and viewpoints.",
+          "Visit iconic Cappadocia viewpoints and valleys.",
         image:
           "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop"
       },
@@ -70,7 +68,7 @@ const categories = [
       {
         name: "Cave Hotel Experience",
         description:
-          "Stay inside luxury cave suites with unforgettable atmosphere.",
+          "Luxury cave suite accommodation experience.",
         image:
           "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
       }
@@ -83,7 +81,7 @@ const categories = [
       {
         name: "Pamukkale Tour",
         description:
-          "Discover white travertines and thermal waters of Pamukkale.",
+          "Discover thermal waters and white travertines.",
         image:
           "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2070&auto=format&fit=crop"
       },
@@ -91,7 +89,7 @@ const categories = [
       {
         name: "Ephesus Ancient City",
         description:
-          "Explore one of the most important ancient cities of the Roman Empire.",
+          "Explore one of Turkey’s most iconic ancient cities.",
         image:
           "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?q=80&w=2070&auto=format&fit=crop"
       },
@@ -99,7 +97,7 @@ const categories = [
       {
         name: "Troy Ancient City",
         description:
-          "Visit the legendary city from Greek mythology and history.",
+          "Visit the legendary city from ancient mythology.",
         image:
           "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
       },
@@ -107,7 +105,7 @@ const categories = [
       {
         name: "Gallipoli Tour",
         description:
-          "Historical battlefield tour with emotional and cultural significance.",
+          "Historical battlefield and memorial experience.",
         image:
           "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop"
       }
@@ -116,60 +114,6 @@ const categories = [
 ]
 
 export default function ToursPage() {
-
-useEffect(() => {
-
-  const sliders = document.querySelectorAll(".horizontal-scroll")
-
-  sliders.forEach((slider) => {
-
-    let scrollSpeed = 0
-
-    const move = () => {
-
-      slider.scrollLeft += scrollSpeed
-
-      requestAnimationFrame(move)
-    }
-
-    move()
-
-    const handleMove = (e) => {
-
-      const rect = slider.getBoundingClientRect()
-
-      const x = e.clientX - rect.left
-
-      const width = rect.width
-
-      const percentage = x / width
-
-      if (percentage > 0.6) {
-
-        scrollSpeed = 8
-
-      } else if (percentage < 0.4) {
-
-        scrollSpeed = -8
-
-      } else {
-
-        scrollSpeed = 0
-      }
-    }
-
-    const stopScroll = () => {
-
-      scrollSpeed = 0
-    }
-
-    slider.addEventListener("mousemove", handleMove)
-
-    slider.addEventListener("mouseleave", stopScroll)
-
-  })
-
-}, [])
   return (
     <div className="min-h-screen px-6 pt-32 pb-28">
 
@@ -208,7 +152,7 @@ useEffect(() => {
 
           <section key={index}>
 
-            {/* Category Title */}
+            {/* Category Header */}
 
             <div className="flex items-center justify-between mb-8">
 
@@ -222,9 +166,9 @@ useEffect(() => {
 
             </div>
 
-            {/* Horizontal Scroll */}
+            {/* Scroll Area */}
 
-            <div className="horizontal-scroll flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide">
+            <div className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar">
 
               {category.tours.map((tour, i) => (
 
