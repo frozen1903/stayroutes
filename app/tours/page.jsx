@@ -62,6 +62,7 @@ const categories = [
         name: "Hot Air Balloon Ride",
         description:
           "Sunrise balloon ride above Cappadocia valleys.",
+        link: "/tours/hot-air-balloon-ride",
         image:
           "https://images.unsplash.com/photo-1641128322288-6b9b0a912055?q=80&w=2070&auto=format&fit=crop"
       },
