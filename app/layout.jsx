@@ -2,9 +2,10 @@ import './globals.css'
 
 export const metadata = {
   title: 'StayRoute',
+  
+  description: 'Digital Hotel Concierge',
    icons: {
     icon: "/favicon.png",
-  description: 'Digital Hotel Concierge',
 }
 
 export const viewport = {
