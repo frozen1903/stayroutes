@@ -181,14 +181,7 @@ export default function ToursPage() {
        
     <div className="min-h-screen px-6 pt-32 pb-28">
 
-      {/* Back */}
-
-      <a
-        href="/"
-        className="inline-flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-all mb-10"
-      >
-        ← Back to Home
-      </a>
+    
 
       {/* Hero */}
 
