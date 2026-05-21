@@ -10,22 +10,22 @@ const categories = [
         name: "Bosphorus Dinner Cruise",
         description:
           "Luxury dinner cruise with Bosphorus skyline views.",
+        link: "/tours/bosphorus-dinner-cruise"
         image:
           "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/17/12/89/b3.jpg"
       },
 
       {
         name: "Luxury Yacht Tour",
-        description:
-          "Private yacht experience with premium concierge service.",
-        image:
-          "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop"
-      },
+        link: "/tours/luxury-yacht-tour",
+          description:
+    "Private yacht experience with premium concierge service.",
 
       {
         name: "Old City Tour",
         description:
           "Explore Istanbul’s historical landmarks and culture.",
+        link: "/tours/old-city-tour"
         image:
           "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=2070&auto=format&fit=crop"
       },
@@ -34,6 +34,7 @@ const categories = [
         name: "Princes Islands Tour",
         description:
           "Peaceful island escape with beautiful sea views.",
+        link: "/tours/princes-islands-tour"
         image:
           "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop"
       }
@@ -255,7 +256,7 @@ export default function ToursPage() {
                     </p>
 
                     <a
-                      href="/tours/bosphorus-dinner-cruise"
+                      href={tour.link}
                       className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
                     >
                       Book Via Whatsapp
