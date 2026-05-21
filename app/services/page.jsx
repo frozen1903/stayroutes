@@ -92,11 +92,11 @@ export default function Services() {
         ))}
 
       </div>
-          <Footer/>
+    
+    </section>
+            <Footer/>
 
     </>
 
-
-    </section>
   )
 }
