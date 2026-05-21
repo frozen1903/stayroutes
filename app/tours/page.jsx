@@ -255,7 +255,7 @@ export default function ToursPage() {
                     </p>
 
                     <a
-                      href="https://wa.me/905555555555"
+                      href="/tours/bosphorus-dinner-cruise"
                       className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
                     >
                       Book Via Whatsapp
