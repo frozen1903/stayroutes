@@ -14,10 +14,15 @@ export default function Navbar() {
 
         <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl px-5 py-4 flex items-center justify-between shadow-2xl">
 
-          <h1 className="text-2xl font-black tracking-wide">
-            StayRoute
-          </h1>
+           <a href="/">
 
+      <img
+        src="/logo.png"
+        alt="StayRoute"
+        className="h-10 w-auto cursor-pointer"
+      />
+
+    </a>
           {/* Desktop Menu */}
 
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-200">
