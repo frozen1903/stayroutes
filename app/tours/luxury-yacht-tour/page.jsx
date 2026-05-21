@@ -23,13 +23,7 @@ export default function LuxuryYachtTour() {
 
           <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20">
 
-            <a
-              href="/tours"
-              className="text-gray-300 hover:text-yellow-400 transition-all mb-8 w-fit"
-            >
-              ← Back to Tours
-            </a>
-
+        
             <p className="uppercase tracking-[5px] text-yellow-400 mb-6 text-sm">
               Luxury Experience
             </p>
