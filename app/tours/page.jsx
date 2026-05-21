@@ -10,7 +10,7 @@ const categories = [
         name: "Bosphorus Dinner Cruise",
         description:
           "Luxury dinner cruise with Bosphorus skyline views.",
-        link: "/tours/bosphorus-dinner-cruise"
+        link: "/tours/bosphorus-dinner-cruise",
         image:
           "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/17/12/89/b3.jpg"
       },
@@ -27,7 +27,7 @@ const categories = [
         name: "Old City Tour",
         description:
           "Explore Istanbul’s historical landmarks and culture.",
-        link: "/tours/old-city-tour"
+        link: "/tours/old-city-tour",
         image:
           "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=2070&auto=format&fit=crop"
       },
@@ -36,7 +36,7 @@ const categories = [
         name: "Princes Islands Tour",
         description:
           "Peaceful island escape with beautiful sea views.",
-        link: "/tours/princes-islands-tour"
+        link: "/tours/princes-islands-tour",
         image:
           "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop"
       }
