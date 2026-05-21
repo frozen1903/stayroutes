@@ -27,6 +27,14 @@ const categories = [
     image:
       "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop"
   },
+         {
+        name: "Esim",
+        description:
+          "E-sim Packages Check for details..",
+        link: "/tours/E-sim",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVvYLD8eaogQNulzw6KahwPeH3ZWVO80r5w&s"
+      },
       {
         name: "Old City Tour",
         description:
