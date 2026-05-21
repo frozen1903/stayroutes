@@ -30,15 +30,16 @@ export default function Navbar() {
               Transfer
             </a>
 
-            <a href="/services" className="hover:text-yellow-400 transition-all">
-              Services
-            </a>
-
             <a href="/tours" className="hover:text-yellow-400 transition-all">
               Tours
             </a>
 
-          </div>
+            <a href="/services" className="hover:text-yellow-400 transition-all">
+              Why Us
+            </a>
+
+            
+         </div>
 
           {/* Mobile Hamburger */}
 
