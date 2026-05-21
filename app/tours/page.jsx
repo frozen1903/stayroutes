@@ -1,5 +1,7 @@
 "use client"
 
+import { useEffect } from "react"
+
 const categories = [
   {
     title: "Istanbul Experiences",
@@ -114,6 +116,57 @@ const categories = [
 ]
 
 export default function ToursPage() {
+  useEffect(() => {
+
+  const sliders = document.querySelectorAll(".drag-scroll")
+
+  sliders.forEach((slider) => {
+
+    let isDown = false
+    let startX
+    let scrollLeft
+
+    slider.addEventListener("mousedown", (e) => {
+
+      isDown = true
+
+      slider.classList.add("active")
+
+      startX = e.pageX - slider.offsetLeft
+
+      scrollLeft = slider.scrollLeft
+    })
+
+    slider.addEventListener("mouseleave", () => {
+
+      isDown = false
+
+      slider.classList.remove("active")
+    })
+
+    slider.addEventListener("mouseup", () => {
+
+      isDown = false
+
+      slider.classList.remove("active")
+    })
+
+    slider.addEventListener("mousemove", (e) => {
+
+      if (!isDown) return
+
+      e.preventDefault()
+
+      const x = e.pageX - slider.offsetLeft
+
+      const walk = (x - startX) * 2
+
+      slider.scrollLeft = scrollLeft - walk
+    })
+
+  })
+
+}, [])
   return (
     <div className="min-h-screen px-6 pt-32 pb-28">
 
@@ -168,7 +221,7 @@ export default function ToursPage() {
 
             {/* Scroll Area */}
 
-            <div className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar">
+            <div className="drag-scroll flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar cursor-grab active:cursor-grabbing">
 
               {category.tours.map((tour, i) => (
 
