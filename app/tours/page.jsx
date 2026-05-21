@@ -221,7 +221,7 @@ export default function ToursPage() {
 
             {/* Scroll Area */}
 
-            <div className="drag-scroll flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar cursor-grab active:cursor-grabbing">
+            <div className="drag-scroll flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar cursor-grab active:cursor-grabbing select-none">
 
               {category.tours.map((tour, i) => (
 
