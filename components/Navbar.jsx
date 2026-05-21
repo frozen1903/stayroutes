@@ -19,7 +19,7 @@ export default function Navbar() {
       <img
         src="/logo.png"
         alt="StayRoute"
-        className="h-10 w-auto cursor-pointer"
+        className="h-16 md:h-20 w-auto object-contain cursor-pointer"
       />
 
     </a>
