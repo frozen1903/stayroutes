@@ -12,14 +12,14 @@ export default function Navbar() {
 
       <nav className="fixed top-0 left-0 w-full z-50 px-4 py-4">
 
-        <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl px-5 py-4 flex items-center justify-between shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl px-5 py-2 flex items-center justify-between shadow-2xl">
 
            <a href="/">
 
       <img
         src="/logo.png"
         alt="StayRoute"
-        className="h-16 md:h-20 w-auto object-contain cursor-pointer"
+        className="h-14 w-auto object-contain cursor-pointer"
       />
 
     </a>
