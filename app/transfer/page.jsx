@@ -1,5 +1,8 @@
 "use client"
 
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+
 import { useState } from "react"
 
 export default function Transfer() {
@@ -21,8 +24,13 @@ Date: ${date}
 Guests: ${guests}
 Vehicle: ${vehicle}
 `
-
   return (
+    <>
+  <Navbar/>
+
+  <div className="min-h-screen">
+
+    
     <div className="min-h-screen px-6 pt-32 pb-24">
 <a
   href="/"
@@ -166,5 +174,8 @@ Vehicle: ${vehicle}
       </div>
 
     </div>
+    <Footer/>
+
+</>
   )
 }
