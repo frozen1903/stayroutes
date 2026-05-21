@@ -2,6 +2,8 @@ import './globals.css'
 
 export const metadata = {
   title: 'StayRoute',
+   icons: {
+    icon: "/favicon.png",
   description: 'Digital Hotel Concierge',
 }
 
