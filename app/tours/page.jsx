@@ -31,7 +31,7 @@ const categories = [
         name: "Esim",
         description:
           "E-sim Packages Check for details..",
-        link: "/tours/E-sim",
+        link: "/tours/e-sim",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVvYLD8eaogQNulzw6KahwPeH3ZWVO80r5w&s"
       },
