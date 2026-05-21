@@ -32,8 +32,6 @@ Vehicle: ${vehicle}
 
     
     <div className="min-h-screen px-6 pt-24 md:pt-32 pb-24">
-
-      </div>
       {/* Heading */}
 
       <div className="text-center mb-14">
