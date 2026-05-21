@@ -32,12 +32,7 @@ Vehicle: ${vehicle}
 
     
     <div className="min-h-screen px-6 pt-32 pb-24">
-<a
-  href="/"
-  className="inline-flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-all mb-10"
->
-  ← Back to Home
-</a>
+
       {/* Heading */}
 
       <div className="text-center mb-14">
