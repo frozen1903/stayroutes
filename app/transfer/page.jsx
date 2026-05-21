@@ -31,7 +31,7 @@ Vehicle: ${vehicle}
   <div className="min-h-screen">
 
     
-    <div className="min-h-screen px-6 pt-32 pb-24">
+    <div className="min-h-screen px-6 pt-24 md:pt-32 pb-24">
 
       </div>
       {/* Heading */}
