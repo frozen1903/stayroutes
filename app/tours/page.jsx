@@ -11,7 +11,7 @@ const categories = [
         description:
           "Luxury dinner cruise with Bosphorus skyline views.",
         image:
-          "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=2070&auto=format&fit=crop"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREZ7nBoHvB3OC6gY1Ri83BehCZRVIBfMmh8g&s"
       },
 
       {
