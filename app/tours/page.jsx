@@ -15,12 +15,14 @@ const categories = [
           "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/17/12/89/b3.jpg"
       },
 
-      {
-        name: "Luxury Yacht Tour",
+    {
+    name: "Luxury Yacht Tour",
+    description:
+      "Private yacht experience with premium concierge service.",
         link: "/tours/luxury-yacht-tour",
-          description:
-    "Private yacht experience with premium concierge service.",
-
+    image:
+      "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop"
+  },
       {
         name: "Old City Tour",
         description:
