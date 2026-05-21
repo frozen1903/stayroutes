@@ -168,6 +168,8 @@ Vehicle: ${vehicle}
       </div>
 
     </div>
+  
+  </div>
     
     <Footer/>
      </>
