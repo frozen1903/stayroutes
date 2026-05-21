@@ -1,5 +1,9 @@
 "use client"
 
+
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+
 import { useEffect } from "react"
 
 const categories = [
@@ -171,6 +175,10 @@ export default function ToursPage() {
 
 }, [])
   return (
+     <>
+
+    <Navbar/>
+       
     <div className="min-h-screen px-6 pt-32 pb-28">
 
       {/* Back */}
@@ -279,5 +287,8 @@ export default function ToursPage() {
       </div>
 
     </div>
+       <Footer/>
+
+</>
   )
 }
