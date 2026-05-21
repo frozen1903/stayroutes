@@ -11,7 +11,7 @@ const categories = [
         description:
           "Luxury dinner cruise with Bosphorus skyline views.",
         image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREZ7nBoHvB3OC6gY1Ri83BehCZRVIBfMmh8g&s"
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/17/12/89/b3.jpg"
       },
 
       {
