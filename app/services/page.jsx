@@ -1,3 +1,6 @@
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+
 const features = [
   {
     title: "24/7 Concierge",
@@ -30,6 +33,11 @@ const features = [
 
 export default function Services() {
   return (
+
+    <>
+
+      <Navbar/>
+      
     <section className="max-w-7xl mx-auto px-6 py-24">
 
       {/* Heading */}
@@ -80,6 +88,9 @@ export default function Services() {
             </p>
 
           </div>
+       <Footer/>
+
+    </>
 
         ))}
 
