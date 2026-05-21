@@ -5,7 +5,8 @@ export const metadata = {
   
   description: 'Digital Hotel Concierge',
    icons: {
-    icon: "/favicon.png",
+    icon: '/favicon.png',
+  },
 }
 
 export const viewport = {
