@@ -88,13 +88,14 @@ export default function Services() {
             </p>
 
           </div>
-       <Footer/>
-
-    </>
-
+   
         ))}
 
       </div>
+          <Footer/>
+
+    </>
+
 
     </section>
   )
