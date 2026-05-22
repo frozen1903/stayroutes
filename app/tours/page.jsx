@@ -61,7 +61,7 @@ const categories = [
         name: "Cappadocia Tour",
         description:
           "Sunrise balloon ride above Cappadocia valleys.",
-        link: "/tours/hot-air-balloon-ride",
+        link: "/tours/cappadocia-experience",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk3H9_PeSbts5pEn5qBG7Njr3WB70TiiyU6g&s"
       },
