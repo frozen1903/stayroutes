@@ -28,7 +28,7 @@ const categories = [
       "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop"
   },
          {
-        name: "Esim",
+        name: "E-sim",
         description:
           "E-sim Packages Check for details..",
         link: "/tours/e-sim",
@@ -63,7 +63,7 @@ const categories = [
           "Sunrise balloon ride above Cappadocia valleys.",
         link: "/tours/hot-air-balloon-ride",
         image:
-          "https://images.unsplash.com/photo-1641128322288-6b9b0a912055?q=80&w=2070&auto=format&fit=crop"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk3H9_PeSbts5pEn5qBG7Njr3WB70TiiyU6g&s"
       },
       
       {
@@ -71,7 +71,7 @@ const categories = [
         description:
           "Discover thermal waters and white travertines.",
         image:
-          "https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?q=80&w=2070&auto=format&fit=crop"
+          "https://images.izmirburaya.com/Images/Deals/1200x1200/4f6023c7-aead-4daa-b2cc-1246d8ffb918.jpg"
       },
 
       {
