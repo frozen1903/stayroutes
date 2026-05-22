@@ -377,7 +377,7 @@ export default function CappadociaExperience() {
 
         </section>
 
-        {/* Detailed Experiences */}
+              {/* Detailed Experiences */}
 
         <section className="max-w-7xl mx-auto px-6 pb-24">
 
@@ -390,6 +390,8 @@ export default function CappadociaExperience() {
           </h2>
 
           <div className="space-y-32">
+
+            {/* Balloon Ride */}
 
             <div className="grid md:grid-cols-2 gap-14 items-center">
 
@@ -413,47 +415,238 @@ export default function CappadociaExperience() {
                   Watch the sunrise above Cappadocia valleys with one of the most iconic balloon experiences in the world.
                 </p>
 
+                <div className="space-y-4 text-gray-400">
+
+                  <p>✓ Sunrise Flight</p>
+                  <p>✓ Professional Pilots</p>
+                  <p>✓ Champagne Celebration</p>
+                  <p>✓ Hotel Pickup Included</p>
+
+                </div>
+
               </div>
 
             </div>
 
-          </div>
+            {/* ATV Safari */}
 
-        </section>
+            <div className="grid md:grid-cols-2 gap-14 items-center">
 
-        {/* Gallery */}
+              <div>
 
-        <section className="px-6 pb-28">
+                <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+                  Adventure Tour
+                </p>
 
-          <div className="max-w-7xl mx-auto">
+                <h3 className="text-4xl md:text-6xl font-black mb-8">
+                  ATV Safari 🏍️
+                </h3>
 
-            <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
-              Gallery
-            </p>
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  Ride through dusty valley roads, hidden caves and magical sunset viewpoints with guided ATV adventures.
+                </p>
 
-            <h2 className="text-4xl md:text-6xl font-black mb-12">
-              Cappadocia Moments
-            </h2>
+                <div className="space-y-4 text-gray-400">
 
-            <div className="grid md:grid-cols-3 gap-6">
+                  <p>✓ Sunset Valley Route</p>
+                  <p>✓ Guided Adventure</p>
+                  <p>✓ Safety Equipment</p>
+                  <p>✓ Photo Stops</p>
+
+                </div>
+
+              </div>
 
               <img
-                src="https://images.unsplash.com/photo-1641128322435-3e8a6f6c6b4f?q=80&w=2070&auto=format&fit=crop"
-                alt="Balloon Ride"
-                className="rounded-[32px] h-[500px] object-cover w-full hover:scale-[1.02] transition-all duration-500"
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop"
+                alt="ATV Safari"
+                className="rounded-[40px] h-[600px] object-cover w-full"
               />
+
+            </div>
+
+            {/* Cave Hotel */}
+
+            <div className="grid md:grid-cols-2 gap-14 items-center">
 
               <img
                 src="https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?q=80&w=2070&auto=format&fit=crop"
-                alt="Cappadocia Hotel"
-                className="rounded-[32px] h-[500px] object-cover w-full hover:scale-[1.02] transition-all duration-500"
+                alt="Cave Hotel"
+                className="rounded-[40px] h-[600px] object-cover w-full"
               />
+
+              <div>
+
+                <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+                  Luxury Stay
+                </p>
+
+                <h3 className="text-4xl md:text-6xl font-black mb-8">
+                  Cave Hotel Experience 🏨
+                </h3>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  Stay inside authentic luxury cave suites with panoramic terraces and unforgettable valley views.
+                </p>
+
+                <div className="space-y-4 text-gray-400">
+
+                  <p>✓ Luxury Cave Rooms</p>
+                  <p>✓ Jacuzzi Suites</p>
+                  <p>✓ Valley Breakfast</p>
+                  <p>✓ Honeymoon Packages</p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Horse Riding */}
+
+            <div className="grid md:grid-cols-2 gap-14 items-center">
+
+              <div>
+
+                <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+                  Romantic Journey
+                </p>
+
+                <h3 className="text-4xl md:text-6xl font-black mb-8">
+                  Horse Riding 🐎
+                </h3>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  Explore peaceful valleys and magical sunset routes with guided horse riding experiences.
+                </p>
+
+                <div className="space-y-4 text-gray-400">
+
+                  <p>✓ Sunset Route</p>
+                  <p>✓ Professional Guides</p>
+                  <p>✓ Romantic Experience</p>
+                  <p>✓ Scenic Valleys</p>
+
+                </div>
+
+              </div>
+
+              <img
+                src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=2070&auto=format&fit=crop"
+                alt="Horse Riding"
+                className="rounded-[40px] h-[600px] object-cover w-full"
+              />
+
+            </div>
+
+            {/* Red Tour */}
+
+            <div className="grid md:grid-cols-2 gap-14 items-center">
 
               <img
                 src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop"
-                alt="Cappadocia Sunset"
-                className="rounded-[32px] h-[500px] object-cover w-full hover:scale-[1.02] transition-all duration-500"
+                alt="Red Tour"
+                className="rounded-[40px] h-[600px] object-cover w-full"
               />
+
+              <div>
+
+                <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+                  Historical Route
+                </p>
+
+                <h3 className="text-4xl md:text-6xl font-black mb-8">
+                  Red Tour 🌄
+                </h3>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  Discover fairy chimneys, Göreme Open Air Museum and Cappadocia’s most iconic historical attractions.
+                </p>
+
+                <div className="space-y-4 text-gray-400">
+
+                  <p>✓ Göreme Museum</p>
+                  <p>✓ Fairy Chimneys</p>
+                  <p>✓ Historical Valleys</p>
+                  <p>✓ Guided Experience</p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Green Tour */}
+
+            <div className="grid md:grid-cols-2 gap-14 items-center">
+
+              <div>
+
+                <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+                  Nature Discovery
+                </p>
+
+                <h3 className="text-4xl md:text-6xl font-black mb-8">
+                  Green Tour 🌿
+                </h3>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  Explore underground cities, hidden caves and breathtaking green valleys across Cappadocia.
+                </p>
+
+                <div className="space-y-4 text-gray-400">
+
+                  <p>✓ Underground City</p>
+                  <p>✓ Nature Valleys</p>
+                  <p>✓ Hidden Caves</p>
+                  <p>✓ Scenic Routes</p>
+
+                </div>
+
+              </div>
+
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop"
+                alt="Green Tour"
+                className="rounded-[40px] h-[600px] object-cover w-full"
+              />
+
+            </div>
+
+            {/* Sunset Valley */}
+
+            <div className="grid md:grid-cols-2 gap-14 items-center">
+
+              <img
+                src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=2070&auto=format&fit=crop"
+                alt="Sunset Valley"
+                className="rounded-[40px] h-[600px] object-cover w-full"
+              />
+
+              <div>
+
+                <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+                  Golden Hour
+                </p>
+
+                <h3 className="text-4xl md:text-6xl font-black mb-8">
+                  Sunset Valley 🌅
+                </h3>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  Experience magical sunsets over the valleys with panoramic viewpoints and unforgettable photo moments.
+                </p>
+
+                <div className="space-y-4 text-gray-400">
+
+                  <p>✓ Golden Hour Views</p>
+                  <p>✓ Panoramic Landscapes</p>
+                  <p>✓ Romantic Atmosphere</p>
+                  <p>✓ Professional Photo Stops</p>
+
+                </div>
+
+              </div>
 
             </div>
 
