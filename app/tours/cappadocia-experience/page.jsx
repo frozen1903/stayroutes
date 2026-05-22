@@ -23,8 +23,6 @@ export default function CappadociaExperience() {
 
           <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20">
 
-          
-
             <p className="uppercase tracking-[5px] text-yellow-400 mb-6 text-sm">
               Luxury Cappadocia Experience
             </p>
@@ -53,8 +51,6 @@ export default function CappadociaExperience() {
         <section className="max-w-7xl mx-auto px-6 py-24">
 
           <div className="grid md:grid-cols-2 gap-16">
-
-            {/* Left */}
 
             <div>
 
@@ -85,8 +81,6 @@ export default function CappadociaExperience() {
               </div>
 
             </div>
-
-            {/* Right */}
 
             <div className="grid grid-cols-2 gap-6">
 
@@ -256,63 +250,51 @@ export default function CappadociaExperience() {
 
           <div className="space-y-6">
 
-            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
 
-              <div>
+              <p className="text-yellow-400 mb-2">
+                05:00 AM
+              </p>
 
-                <p className="text-yellow-400 mb-2">
-                  05:00 AM
-                </p>
+              <h3 className="text-3xl font-bold mb-3">
+                Balloon Pickup
+              </h3>
 
-                <h3 className="text-3xl font-bold mb-3">
-                  Balloon Pickup
-                </h3>
-
-                <p className="text-gray-400">
-                  Early morning VIP pickup from your hotel.
-                </p>
-
-              </div>
+              <p className="text-gray-400">
+                Early morning VIP pickup from your hotel.
+              </p>
 
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
 
-              <div>
+              <p className="text-yellow-400 mb-2">
+                06:00 AM
+              </p>
 
-                <p className="text-yellow-400 mb-2">
-                  06:00 AM
-                </p>
+              <h3 className="text-3xl font-bold mb-3">
+                Sunrise Balloon Flight
+              </h3>
 
-                <h3 className="text-3xl font-bold mb-3">
-                  Sunrise Balloon Flight
-                </h3>
-
-                <p className="text-gray-400">
-                  Fly above the valleys during sunrise.
-                </p>
-
-              </div>
+              <p className="text-gray-400">
+                Fly above the valleys during sunrise.
+              </p>
 
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
 
-              <div>
+              <p className="text-yellow-400 mb-2">
+                09:00 AM
+              </p>
 
-                <p className="text-yellow-400 mb-2">
-                  09:00 AM
-                </p>
+              <h3 className="text-3xl font-bold mb-3">
+                Cave Hotel Breakfast
+              </h3>
 
-                <h3 className="text-3xl font-bold mb-3">
-                  Cave Hotel Breakfast
-                </h3>
-
-                <p className="text-gray-400">
-                  Traditional breakfast with panoramic valley views.
-                </p>
-
-              </div>
+              <p className="text-gray-400">
+                Traditional breakfast with panoramic valley views.
+              </p>
 
             </div>
 
@@ -334,8 +316,6 @@ export default function CappadociaExperience() {
 
           <div className="grid md:grid-cols-3 gap-6">
 
-            {/* Standard */}
-
             <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
 
               <h3 className="text-3xl font-black mb-6">
@@ -351,16 +331,7 @@ export default function CappadociaExperience() {
 
               </div>
 
-              <a
-                href="https://wa.me/905555555555"
-                className="bg-white/10 hover:bg-white/20 transition-all px-6 py-4 rounded-2xl inline-block"
-              >
-                Select Package
-              </a>
-
             </div>
-
-            {/* Couple */}
 
             <div className="bg-yellow-500 text-black rounded-[32px] p-8 scale-105 shadow-2xl">
 
@@ -382,16 +353,7 @@ export default function CappadociaExperience() {
 
               </div>
 
-              <a
-                href="https://wa.me/905555555555"
-                className="bg-black text-white hover:bg-neutral-900 transition-all px-6 py-4 rounded-2xl inline-block"
-              >
-                Select Package
-              </a>
-
             </div>
-
-            {/* VIP */}
 
             <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
 
@@ -409,12 +371,49 @@ export default function CappadociaExperience() {
 
               </div>
 
-              <a
-                href="https://wa.me/905555555555"
-                className="bg-white/10 hover:bg-white/20 transition-all px-6 py-4 rounded-2xl inline-block"
-              >
-                Select Package
-              </a>
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* Detailed Experiences */}
+
+        <section className="max-w-7xl mx-auto px-6 pb-24">
+
+          <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
+            Detailed Experiences
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-black mb-20">
+            Discover Every Moment
+          </h2>
+
+          <div className="space-y-32">
+
+            <div className="grid md:grid-cols-2 gap-14 items-center">
+
+              <img
+                src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2070&auto=format&fit=crop"
+                alt="Balloon Ride"
+                className="rounded-[40px] h-[600px] object-cover w-full"
+              />
+
+              <div>
+
+                <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+                  Sunrise Experience
+                </p>
+
+                <h3 className="text-4xl md:text-6xl font-black mb-8">
+                  Hot Air Balloon Ride 🎈
+                </h3>
+
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  Watch the sunrise above Cappadocia valleys with one of the most iconic balloon experiences in the world.
+                </p>
+
+              </div>
 
             </div>
 
