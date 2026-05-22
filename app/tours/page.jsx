@@ -54,48 +54,18 @@ const categories = [
       }
     ]
   },
-
   {
-    title: "Cappadocia Experiences",
+    title: "Ancient Turkey",
     tours: [
       {
-        name: "Hot Air Balloon Ride",
+        name: "Cappadocia Tour",
         description:
           "Sunrise balloon ride above Cappadocia valleys.",
         link: "/tours/hot-air-balloon-ride",
         image:
           "https://images.unsplash.com/photo-1641128322288-6b9b0a912055?q=80&w=2070&auto=format&fit=crop"
       },
-
-      {
-        name: "ATV Safari",
-        description:
-          "Adventure ride through caves and valleys.",
-        image:
-          "https://images.unsplash.com/photo-1516939884455-1445c8652f83?q=80&w=2070&auto=format&fit=crop"
-      },
-
-      {
-        name: "Red Tour",
-        description:
-          "Visit iconic Cappadocia viewpoints and valleys.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop"
-      },
-
-      {
-        name: "Cave Hotel Experience",
-        description:
-          "Luxury cave suite accommodation experience.",
-        image:
-          "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop"
-      }
-    ]
-  },
-
-  {
-    title: "Ancient Turkey",
-    tours: [
+      
       {
         name: "Pamukkale Tour",
         description:
