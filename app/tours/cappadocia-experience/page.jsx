@@ -14,7 +14,7 @@ export default function CappadociaExperience() {
         <section className="relative h-screen overflow-hidden">
 
           <img
-            src="src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2070&auto=format&fit=crop""
+            src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2070&auto=format&fit=crop"
             alt="Cappadocia"
             className="absolute inset-0 w-full h-full object-cover"
           />
