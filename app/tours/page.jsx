@@ -101,6 +101,7 @@ const categories = [
         name: "Sapanca",
         description:
           "Visit the Sapanca.",
+          link: "/tours/sapanca-masukıye",
         image:
           "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
       },
