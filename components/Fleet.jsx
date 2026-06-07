@@ -2,13 +2,13 @@ const vehicles = [
   {
     title: "Mercedes VIP Vito",
     image:
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=2070&auto=format&fit=crop"
+      "https://otoyazar.com/wp-content/uploads/2020/08/vito-tourer.jpg"
   },
 
   {
     title: "Mercedes Sprinter",
     image:
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=2070&auto=format&fit=crop"
+      "https://www.shouf.io/cdn/shop/files/MercedesSprinter.2-1-491958.webp?v=1730216516"
   }
 ]
 

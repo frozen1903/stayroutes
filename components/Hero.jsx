@@ -49,6 +49,13 @@ export default function Hero() {
             WhatsApp Reception
           </a>
 
+            <a
+            href="/tours"
+            className="bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 text-black px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl"
+          >
+            Explore Tours
+          </a>
+
         </div>
 
       </div>
