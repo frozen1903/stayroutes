@@ -142,7 +142,6 @@ return (
 
               <p>✓ Up To 6 Guests</p>
               <p>✓ Leather Seats</p>
-              <p>✓ Free WiFi</p>
               <p>✓ Airport Meet & Greet</p>
               <p>✓ Complimentary Water</p>
 
