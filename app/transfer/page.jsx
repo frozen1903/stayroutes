@@ -127,7 +127,7 @@ return (
         <div className="bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
 
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE3ykmkf0ht2pm_ITyIVCQh-UeR0Wfv6O5WA&s"
+            src="https://otoyazar.com/wp-content/uploads/2020/08/vito-tourer.jpg"
             alt="Mercedes Vito"
             className="h-[320px] w-full object-cover"
           />
