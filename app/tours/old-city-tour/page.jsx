@@ -366,6 +366,217 @@ export default function OldCityTour() {
           </div>
 
         </section>
+        {/* Experience Timeline */}
+
+<section className="max-w-7xl mx-auto px-6 pb-24">
+
+  <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
+    Experience Timeline
+  </p>
+
+  <h2 className="text-4xl md:text-6xl font-black mb-14">
+    Your Historical Journey
+  </h2>
+
+  <div className="space-y-6">
+
+    <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+      <p className="text-yellow-400 mb-2">09:00 AM</p>
+      <h3 className="text-3xl font-bold mb-3">Hagia Sophia</h3>
+      <p className="text-gray-400">
+        Begin your journey with one of the world's most iconic monuments.
+      </p>
+    </div>
+
+    <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+      <p className="text-yellow-400 mb-2">10:30 AM</p>
+      <h3 className="text-3xl font-bold mb-3">Blue Mosque</h3>
+      <p className="text-gray-400">
+        Explore Ottoman architecture and famous Iznik tiles.
+      </p>
+    </div>
+
+    <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+      <p className="text-yellow-400 mb-2">12:00 PM</p>
+      <h3 className="text-3xl font-bold mb-3">Basilica Cistern</h3>
+      <p className="text-gray-400">
+        Descend into Istanbul's mysterious underground palace.
+      </p>
+    </div>
+
+    <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+      <p className="text-yellow-400 mb-2">02:00 PM</p>
+      <h3 className="text-3xl font-bold mb-3">Grand Bazaar</h3>
+      <p className="text-gray-400">
+        Discover one of the oldest and largest covered markets in the world.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+{/* Detailed Experiences */}
+
+<section className="max-w-7xl mx-auto px-6 pb-24">
+
+  <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
+    Historical Highlights
+  </p>
+
+  <h2 className="text-4xl md:text-6xl font-black mb-20">
+    Discover Every Landmark
+  </h2>
+
+  <div className="space-y-32">
+
+    <div className="grid md:grid-cols-2 gap-14 items-center">
+
+      <img
+        src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=2070&auto=format&fit=crop"
+        alt="Hagia Sophia"
+        className="rounded-[40px] h-[600px] object-cover w-full"
+      />
+
+      <div>
+
+        <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+          Byzantine Wonder
+        </p>
+
+        <h3 className="text-4xl md:text-6xl font-black mb-8">
+          Hagia Sophia 🕌
+        </h3>
+
+        <p className="text-gray-300 text-lg leading-relaxed">
+          Discover over 1,500 years of history in one of the most important architectural masterpieces ever built.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-14 items-center">
+
+      <div>
+
+        <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+          Ottoman Legacy
+        </p>
+
+        <h3 className="text-4xl md:text-6xl font-black mb-8">
+          Blue Mosque
+        </h3>
+
+        <p className="text-gray-300 text-lg leading-relaxed">
+          Admire magnificent domes, six minarets and beautiful Iznik tile decorations.
+        </p>
+
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=2070&auto=format&fit=crop"
+        alt="Blue Mosque"
+        className="rounded-[40px] h-[600px] object-cover w-full"
+      />
+
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-14 items-center">
+
+      <img
+        src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop"
+        alt="Grand Bazaar"
+        className="rounded-[40px] h-[600px] object-cover w-full"
+      />
+
+      <div>
+
+        <p className="uppercase tracking-[4px] text-yellow-400 mb-4 text-sm">
+          Shopping Heritage
+        </p>
+
+        <h3 className="text-4xl md:text-6xl font-black mb-8">
+          Grand Bazaar 🛍️
+        </h3>
+
+        <p className="text-gray-300 text-lg leading-relaxed">
+          Wander through thousands of traditional shops and experience Istanbul's vibrant trading culture.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* FAQ */}
+
+<section className="max-w-5xl mx-auto px-6 pb-24">
+
+  <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
+    FAQ
+  </p>
+
+  <h2 className="text-4xl md:text-6xl font-black mb-14">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="space-y-6">
+
+    <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+      <h3 className="text-2xl font-bold mb-4">How long is the tour?</h3>
+      <p className="text-gray-400">
+        Most tours take between 6 and 8 hours depending on the selected package.
+      </p>
+    </div>
+
+    <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+      <h3 className="text-2xl font-bold mb-4">Do you offer private tours?</h3>
+      <p className="text-gray-400">
+        Yes, private guide and VIP options are available.
+      </p>
+    </div>
+
+    <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+      <h3 className="text-2xl font-bold mb-4">Can children join?</h3>
+      <p className="text-gray-400">
+        Absolutely. This experience is family friendly.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+{/* Final CTA */}
+
+<section className="max-w-6xl mx-auto px-6 pb-32">
+
+  <div className="bg-gradient-to-r from-yellow-500 to-yellow-300 text-black rounded-[40px] p-12 md:p-20 text-center">
+
+    <p className="uppercase tracking-[4px] mb-5 text-sm font-bold">
+      Explore Istanbul
+    </p>
+
+    <h2 className="text-4xl md:text-7xl font-black mb-8">
+      Ready To Discover Old Istanbul?
+    </h2>
+
+    <p className="max-w-3xl mx-auto text-lg mb-10">
+      Let our local experts create the perfect historical experience for you.
+    </p>
+
+    <a
+      href="https://wa.me/905555555555"
+      className="bg-black text-white px-10 py-5 rounded-2xl inline-block font-bold hover:scale-105 transition-all"
+    >
+      Talk To A Local Expert
+    </a>
+
+  </div>
+
+</section>
+
 
       </div>
 
