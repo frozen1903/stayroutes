@@ -154,7 +154,7 @@ return (
         <div className="bg-white/5 border border-white/10 rounded-[40px] overflow-hidden">
 
           <img
-            src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2070&auto=format&fit=crop"
+            src="https://www.shouf.io/cdn/shop/files/MercedesSprinter.2-1-491958.webp?v=1730216516"
             alt="Mercedes Sprinter"
             className="h-[320px] w-full object-cover"
           />
