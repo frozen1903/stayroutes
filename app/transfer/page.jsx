@@ -310,7 +310,7 @@ return (
           <div>
 
             <label className="text-sm text-gray-400 block mb-3">
-              Airport
+              Airports
             </label>
 
             <select
