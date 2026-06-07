@@ -654,6 +654,125 @@ export default function CappadociaExperience() {
 
         </section>
 
+                {/* Gallery */}
+
+        <section className="max-w-7xl mx-auto px-6 pb-24">
+
+          <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
+            Gallery
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-black mb-14">
+            Moments From Cappadocia
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
+
+            <img
+              src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2070&auto=format&fit=crop"
+              alt="Gallery"
+              className="rounded-[32px] h-[450px] w-full object-cover"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop"
+              alt="Gallery"
+              className="rounded-[32px] h-[450px] w-full object-cover"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=2070&auto=format&fit=crop"
+              alt="Gallery"
+              className="rounded-[32px] h-[450px] w-full object-cover"
+            />
+
+          </div>
+
+        </section>
+
+                {/* FAQ */}
+
+        <section className="max-w-5xl mx-auto px-6 pb-24">
+
+          <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
+            FAQ
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-black mb-14">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-6">
+
+            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+              <h3 className="text-2xl font-bold mb-4">
+                Is the balloon ride included?
+              </h3>
+              <p className="text-gray-400">
+                Depending on your selected package, balloon flights can be included or arranged separately.
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+              <h3 className="text-2xl font-bold mb-4">
+                How many days should I stay?
+              </h3>
+              <p className="text-gray-400">
+                We recommend at least 2-3 days to fully experience Cappadocia.
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+              <h3 className="text-2xl font-bold mb-4">
+                Do you provide hotel transfers?
+              </h3>
+              <p className="text-gray-400">
+                Yes. Private airport and hotel transfers can be arranged.
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+              <h3 className="text-2xl font-bold mb-4">
+                Can children join the tours?
+              </h3>
+              <p className="text-gray-400">
+                Most experiences are suitable for families and children.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+                {/* Final CTA */}
+
+        <section className="max-w-6xl mx-auto px-6 pb-32">
+
+          <div className="bg-gradient-to-r from-yellow-500 to-yellow-300 text-black rounded-[40px] p-12 md:p-20 text-center">
+
+            <p className="uppercase tracking-[4px] mb-5 text-sm font-bold">
+              Start Your Journey
+            </p>
+
+            <h2 className="text-4xl md:text-7xl font-black mb-8">
+              Ready To Explore Cappadocia?
+            </h2>
+
+            <p className="max-w-3xl mx-auto text-lg mb-10">
+              Contact our concierge team and let us create your perfect Cappadocia experience.
+            </p>
+
+            <a
+              href="https://wa.me/905555555555"
+              className="bg-black text-white px-10 py-5 rounded-2xl inline-block font-bold hover:scale-105 transition-all"
+            >
+              Book Via WhatsApp
+            </a>
+
+          </div>
+
+        </section>
+
       </div>
 
       <Footer/>
