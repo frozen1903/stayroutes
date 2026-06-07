@@ -197,7 +197,6 @@ return (
       </h2>
 
       <div className="grid md:grid-cols-4 gap-6">
-```
         <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
           <div className="text-5xl mb-5">✈️</div>
           <h3 className="text-xl font-bold mb-3">
@@ -383,7 +382,8 @@ return (
               </option>
 
               <option>
-                VIP Mercedes Sprinter              </option>
+                VIP Mercedes Sprinter
+                </option>
 
             </select>
 
@@ -405,7 +405,6 @@ return (
                 </h3>
 
                <div className="grid md:grid-cols-2 gap-4">
-                ```
                   <input
                     type="text"
                     placeholder="Name Surname"
@@ -570,4 +569,6 @@ return (
 
   <Footer />
 
-</>
+  </>
+  )
+}
