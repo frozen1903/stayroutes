@@ -96,7 +96,14 @@ const categories = [
           "Historical battlefield and memorial experience.",
         image:
           "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop"
-      }
+      },
+       {
+        name: "Sapanca",
+        description:
+          "Visit the Sapanca.",
+        image:
+          "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
+      },
     ]
   }
 ]
