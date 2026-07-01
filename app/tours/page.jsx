@@ -79,6 +79,7 @@ const categories = [
         name: "Ephesus Ancient City",
         description:
           "Explore one of Turkey’s most iconic ancient cities.",
+        link: "/tours/ephesus-ancient-city",
         image:
           "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?q=80&w=2070&auto=format&fit=crop"
       },
@@ -87,6 +88,7 @@ const categories = [
         name: "Troy Ancient City",
         description:
           "Visit the legendary city from ancient mythology.",
+        link: "/tours/troy-ancient-city",
         image:
           "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
       },
@@ -95,6 +97,7 @@ const categories = [
         name: "Gallipoli Tour",
         description:
           "Historical battlefield and memorial experience.",
+        link: "/tours/gallipoli-tour",
         image:
           "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop"
       },
