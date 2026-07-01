@@ -70,6 +70,7 @@ const categories = [
         name: "Pamukkale Tour",
         description:
           "Discover thermal waters and white travertines.",
+        link: "/tours/pamukkale-tour",
         image:
           "https://images.izmirburaya.com/Images/Deals/1200x1200/4f6023c7-aead-4daa-b2cc-1246d8ffb918.jpg"
       },
