@@ -2,6 +2,15 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { site } from '../../lib/site'
 
+export const metadata = {
+  title: 'Why Us',
+  description:
+    'Luxury transportation, premium tours and personalized concierge services designed for modern travelers in Turkey.',
+  alternates: {
+    canonical: '/services',
+  },
+}
+
 const features = [
   {
     title: "24/7 Concierge",

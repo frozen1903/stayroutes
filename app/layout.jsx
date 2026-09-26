@@ -3,11 +3,21 @@ import MobileNav from '../components/MobileNav'
 import { site } from '../lib/site'
 
 export const metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: site.name,
+    default: `${site.name} | Premium Travel Concierge in Turkey`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: site.name,
+    locale: 'en_US',
+    images: [{ url: '/logo.png', alt: site.name }],
+  },
   icons: {
     icon: '/favicon.png',
   },

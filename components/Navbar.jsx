@@ -8,7 +8,7 @@ const links = [
   { href: "/", label: "Home", icon: "🏠" },
   { href: "/transfer", label: "Transfer", icon: "✈️" },
   { href: "/tours", label: "Tours", icon: "🗺️" },
-  { href: "/tours/e-sim", label: "eSIM", icon: "📶" },
+  { href: "/esim", label: "eSIM", icon: "📶" },
   { href: "/services", label: "Why Us", icon: "✨" },
 ]
 

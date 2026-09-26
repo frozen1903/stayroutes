@@ -17,21 +17,28 @@ Tüm rezervasyonlar WhatsApp üzerinden alınıyor (backend yok). İçerik İngi
 - Komutlar: `npm run dev`, `npm run build`, `npm start`. Test ve lint kurulumu yok; değişiklikten sonra `npm run build` ile doğrula.
 
 ```
-lib/site.js             marka adı, açıklama, WhatsApp numarası, sosyal linkler + whatsappUrl(message)
+lib/site.js             marka adı, site URL'i, açıklama, WhatsApp numarası, sosyal linkler + whatsappUrl(message)
+lib/imageLoader.js      next/image loader: Unsplash görsellerini Unsplash CDN'inden boyutlandırır
+data/tours/
+  index.js              tours listesi (sıra = /tours sırası), categories, getTour(), toursInCategory()
+  <slug>.js             her turun tüm içeriği (metin, görseller, paketler, SSS...)
 app/
-  layout.jsx            root layout, metadata (title template "%s | StayRoute"), MobileNav
+  layout.jsx            root layout, metadataBase, varsayılan OpenGraph, MobileNav
   page.jsx              ana sayfa
-  services/page.jsx     "Why Us" sayfası
-  transfer/page.jsx     transfer formu -> hazır WhatsApp mesajı ("use client")
-  tours/page.jsx        tur listesi, kategoriler, drag-scroll ("use client")
-  tours/TourDetail.jsx  ortak tur detay şablonu (props ile)
-  tours/<slug>/page.jsx her tur için ayrı sayfa
+  tours/page.jsx        tur listesi (data'dan, kategori bazlı)
+  tours/[slug]/page.jsx tüm tur detay sayfaları (generateStaticParams + generateMetadata, dynamicParams=false)
+  transfer/page.jsx     metadata + TransferPage.jsx (client, form -> hazır WhatsApp mesajı)
+  esim/page.jsx         eSIM paketleri
+  services/page.jsx     "Why Us"
+  sitemap.js, robots.js, not-found.jsx
 components/
+  TourDetail.jsx        tur detay şablonu; tüm bölümler veriye göre isteğe bağlı render edilir
+  DragScroll.jsx        masaüstünde sürükleyerek yatay kaydırma (client)
   Navbar.jsx            üst menü + mobil çekmece menü (client)
   MobileNav.jsx         mobil alt menü + masaüstü WhatsApp butonu (layout'ta, her sayfada)
   Hero, Services, Fleet, Reviews, Footer
 public/                 logo.png (320px), favicon.png (64px)
-next.config.js          redirect: eski /tours/sapanca-masukıye -> /tours/sapanca-masukiye
+next.config.js          custom image loader; redirect'ler: /tours/sapanca-masukıye, /tours/e-sim -> /esim
 ```
 
 ## Kod kuralları
@@ -42,28 +49,26 @@ next.config.js          redirect: eski /tours/sapanca-masukıye -> /tours/sapanc
 - Import'lar relative (`../../../lib/site`).
 - İç linkler `next/link` ile; WhatsApp ve harici linkler düz `<a>`.
 - Önceden dolu WhatsApp mesajı: düz string yaz, `whatsappUrl(message)` encode eder. Mesajda marka için `${site.name}`.
+- Görseller `next/image` ile (`fill` + `sizes`, parent `relative` ve yükseklikli). Sadece Unsplash
+  (`images.unsplash.com/photo-...`, ücretsiz lisans) veya `public/` görselleri kullan; başka sitelerden hotlink yok.
 - URL slug'ları sadece ASCII (Türkçe karakter yok).
+- Next 16: `params` bir Promise, `await params` ile okunur. Değişiklik yapmadan önce `node_modules/next/dist/docs/` kontrol et.
 - Çalışma dizinindeki dosyalar CRLF; `core.autocrlf=true` commit'te normalize ediyor.
 
-## Tur sayfaları — iki farklı yapı
+## Tur ekleme / düzenleme
 
-- **Şablon kullanan:** ephesus-ancient-city, gallipoli-tour, troy-ancient-city (`TourDetail`'e props verir).
-- **Elle yazılmış (tekrar eden JSX):** bosphorus-dinner-cruise, luxury-yacht-tour, old-city-tour,
-  cappadocia-experience (782 satır), princes-islands-tour, sapanca-masukiye, pamukkale-tour (şablonun kopyası).
-- Yeni tur eklerken `TourDetail` kullan; tur ayrıca `app/tours/page.jsx` içindeki `categories` dizisine eklenmeli.
+- Yeni tur: `data/tours/<slug>.js` oluştur (mevcut bir turu kopyala), `data/tours/index.js`'deki listeye ekle. Başka bir şey gerekmez;
+  sayfa, liste kartı, sitemap ve metadata otomatik oluşur.
+- Zorunlu alanlar: slug, category ('istanbul' | 'beyond'), card {name, description, image}, eyebrow, title, heroImage, intro,
+  aboutTitle, aboutText. Diğer tüm bölümler isteğe bağlı: secondaryText, inclusions, stats, aboutImage, highlights(+Title/Text),
+  timeline(+Title), details(+Eyebrow/Title), packages(+Title), gallery(+Title), faq, cta, seoTitle.
+- Paket "Select Package" ve "Reserve" butonları tur + paket adını içeren hazır WhatsApp mesajı açar.
 
 ## Bilinen sorunlar
 
 - Yorumlar (`Reviews.jsx`) uydurma isimler.
-- Harici sitelerden hotlink görseller (otoyazar.com, shouf.io, gstatic thumbnail, tripadvisor, izmirburaya).
-  Bazı Unsplash görselleri konuyla alakasız: Gallipoli hero bir plaj fotoğrafı, Troy ile Sapanca aynı görseli kullanıyor,
-  ana sayfadaki eSIM kartında otel odası görseli var.
-- eSIM, tur listesinde "Istanbul Experiences" kategorisinde duruyor ama bir tur değil.
-- Tur paketlerinde fiyat yok; "Select Package" butonları hazır mesajsız WhatsApp açıyor (Sapanca hariç).
 - Transfer formu: doğrulama yok, geçmiş tarih seçilebiliyor, state doğrudan mutate ediliyor
   (`updated[index].name = ...`), uçuş no / saat / otel / bagaj alanları yok, gereksiz cinsiyet alanı var.
-- `tours/page.jsx` drag-scroll için DOM'a cleanup'sız event listener ekliyor.
-- Hiç sayfa bazlı metadata/OG, sitemap, robots, özel 404 yok.
 
 ## Yol haritası
 
@@ -81,15 +86,15 @@ Durumlar: [ ] yapılacak, [x] tamam. İş bitince burayı güncelle.
 - [x] İşlevsiz butonlar: Fleet -> transfer formuna link, tur kategorisi "Explore" kaldırıldı, ana sayfa servis kartları link oldu
 - [ ] Gerçek WhatsApp numarası (en son eklenecek)
 
-### Faz 1 — Yapı ve SEO
-- [ ] Turları `data/tours.js`'e taşı, `app/tours/[slug]/page.jsx` + `generateStaticParams`
-- [ ] Sayfa bazlı `generateMetadata` (title, description, OpenGraph)
-- [ ] `app/sitemap.js`, `app/robots.js`, özel `not-found.jsx`
-- [ ] Görselleri `public/`'e al veya `next/image` + `remotePatterns` kullan; alakasız görselleri değiştir
-- [ ] eSIM'i turlardan ayır (`/esim`)
+### Faz 1 — Yapı ve SEO (tamamlandı)
+- [x] Turlar `data/tours/`'a taşındı, tek `app/tours/[slug]/page.jsx` + `generateStaticParams`
+- [x] Sayfa bazlı metadata (title, description, canonical, OpenGraph)
+- [x] `app/sitemap.js`, `app/robots.js`, özel `not-found.jsx`
+- [x] Alakasız ve hotlink görseller Unsplash görselleriyle değiştirildi, `next/image` + Unsplash loader
+- [x] eSIM turlardan ayrıldı (`/esim`)
 
 ### Faz 2 — Dönüşüm
-- [ ] Her tur/paket butonu için hazır WhatsApp mesajı (tur + paket adı)
+- [x] Her tur/paket butonu için hazır WhatsApp mesajı (tur + paket adı)
 - [ ] Paketlere "from €..." fiyat bilgisi
 - [ ] Transfer formunu geliştir: yön, uçuş no, saat, otel/adres, bagaj, çocuk koltuğu, telefon, doğrulama
 - [ ] Gerçek Google/TripAdvisor yorumları

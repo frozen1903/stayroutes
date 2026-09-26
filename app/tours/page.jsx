@@ -1,275 +1,126 @@
-"use client"
-
-
+import Image from 'next/image'
+import Link from 'next/link'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import Link from 'next/link'
+import DragScroll from '../../components/DragScroll'
+import { categories, toursInCategory } from '../../data/tours'
 
-import { useEffect } from "react"
-
-const categories = [
-  {
-    title: "Istanbul Experiences",
-    tours: [
-      {
-        name: "Bosphorus Dinner Cruise",
-        description:
-          "Luxury dinner cruise with Bosphorus skyline views.",
-        link: "/tours/bosphorus-dinner-cruise",
-        image:
-          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/17/12/89/b3.jpg"
-      },
-
-    {
-    name: "Luxury Yacht Tour",
-    description:
-      "Private yacht experience with premium concierge service.",
-        link: "/tours/luxury-yacht-tour",
-    image:
-      "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop"
+export const metadata = {
+  title: 'Tours',
+  description:
+    'Discover unforgettable tours across Turkey: Bosphorus cruises, Istanbul Old City, Cappadocia, Pamukkale, Ephesus and more.',
+  alternates: {
+    canonical: '/tours',
   },
-         {
-        name: "E-sim",
-        description:
-          "E-sim Packages Check for details..",
-        link: "/tours/e-sim",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVvYLD8eaogQNulzw6KahwPeH3ZWVO80r5w&s"
-      },
-      {
-        name: "Old City Tour",
-        description:
-          "Explore Istanbul’s historical landmarks and culture.",
-        link: "/tours/old-city-tour",
-        image:
-          "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=2070&auto=format&fit=crop"
-      },
-
-      {
-        name: "Princes Islands Tour",
-        description:
-          "Peaceful island escape with beautiful sea views.",
-        link: "/tours/princes-islands-tour",
-        image:
-          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop"
-      }
-    ]
-  },
-  {
-    title: "Ancient Turkey",
-    tours: [
-      {
-        name: "Cappadocia Tour",
-        description:
-          "Sunrise balloon ride above Cappadocia valleys.",
-        link: "/tours/cappadocia-experience",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk3H9_PeSbts5pEn5qBG7Njr3WB70TiiyU6g&s"
-      },
-      
-      {
-        name: "Pamukkale Tour",
-        description:
-          "Discover thermal waters and white travertines.",
-        link: "/tours/pamukkale-tour",
-        image:
-          "https://images.izmirburaya.com/Images/Deals/1200x1200/4f6023c7-aead-4daa-b2cc-1246d8ffb918.jpg"
-      },
-
-      {
-        name: "Ephesus Ancient City",
-        description:
-          "Explore one of Turkey’s most iconic ancient cities.",
-        link: "/tours/ephesus-ancient-city",
-        image:
-          "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?q=80&w=2070&auto=format&fit=crop"
-      },
-
-      {
-        name: "Troy Ancient City",
-        description:
-          "Visit the legendary city from ancient mythology.",
-        link: "/tours/troy-ancient-city",
-        image:
-          "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
-      },
-
-      {
-        name: "Gallipoli Tour",
-        description:
-          "Historical battlefield and memorial experience.",
-        link: "/tours/gallipoli-tour",
-        image:
-          "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop"
-      },
-       {
-        name: "Sapanca",
-        description:
-          "Lake Sapanca and Maşukiye nature escape.",
-          link: "/tours/sapanca-masukiye",
-        image:
-          "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
-      },
-    ]
-  }
-]
+}
 
 export default function ToursPage() {
-  useEffect(() => {
-
-  const sliders = document.querySelectorAll(".drag-scroll")
-
-  sliders.forEach((slider) => {
-
-    let isDown = false
-    let startX
-    let scrollLeft
-
-    slider.addEventListener("mousedown", (e) => {
-
-      isDown = true
-
-      slider.classList.add("active")
-
-      startX = e.pageX - slider.offsetLeft
-
-      scrollLeft = slider.scrollLeft
-    })
-
-    slider.addEventListener("mouseleave", () => {
-
-      isDown = false
-
-      slider.classList.remove("active")
-    })
-
-    slider.addEventListener("mouseup", () => {
-
-      isDown = false
-
-      slider.classList.remove("active")
-    })
-
-    slider.addEventListener("mousemove", (e) => {
-
-      if (!isDown) return
-
-      e.preventDefault()
-
-      const x = e.pageX - slider.offsetLeft
-
-      const walk = (x - startX) * 2
-
-      slider.scrollLeft = scrollLeft - walk
-    })
-
-  })
-
-}, [])
   return (
-     <>
+    <>
 
-    <Navbar/>
-       
-    <div className="min-h-screen px-6 pt-32 pb-28">
+      <Navbar/>
 
-    
+      <div className="min-h-screen px-6 pt-32 pb-28">
 
-      {/* Hero */}
+        {/* Hero */}
 
-      <div className="text-center mb-20">
+        <div className="text-center mb-20">
 
-        <p className="text-yellow-400 uppercase tracking-[4px] mb-4 text-sm">
-          Premium Experiences
-        </p>
+          <p className="text-yellow-400 uppercase tracking-[4px] mb-4 text-sm">
+            Premium Experiences
+          </p>
 
-        <h1 className="text-5xl md:text-7xl font-black mb-6">
-          Explore Turkey
-        </h1>
+          <h1 className="text-5xl md:text-7xl font-black mb-6">
+            Explore Turkey
+          </h1>
 
-        <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Discover unforgettable tours, luxury experiences and premium concierge services across Turkey.
-        </p>
+          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Discover unforgettable tours, luxury experiences and premium concierge services across Turkey.
+          </p>
 
-      </div>
+        </div>
 
-      {/* Categories */}
+        {/* Categories */}
 
-      <div className="space-y-20">
+        <div className="space-y-20">
 
-        {categories.map((category, index) => (
+          {categories.map((category) => (
 
-          <section key={index}>
+            <section key={category.id}>
 
-            {/* Category Header */}
+              {/* Category Header */}
 
-            <div className="mb-8">
+              <div className="mb-8">
 
-              <h2 className="text-3xl md:text-5xl font-black">
-                {category.title}
-              </h2>
+                <h2 className="text-3xl md:text-5xl font-black">
+                  {category.title}
+                </h2>
 
-            </div>
+              </div>
 
-            {/* Scroll Area */}
+              {/* Scroll Area */}
 
-            <div className="drag-scroll flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar cursor-grab active:cursor-grabbing select-none">
+              <DragScroll className="drag-scroll flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar cursor-grab active:cursor-grabbing select-none">
 
-              {category.tours.map((tour, i) => (
+                {toursInCategory(category.id).map((tour) => (
 
-                <div
-                  key={i}
-                  className="relative min-w-[320px] md:min-w-[420px] h-[520px] rounded-[36px] overflow-hidden flex-shrink-0 snap-start group shadow-2xl"
-                >
+                  <div
+                    key={tour.slug}
+                    className="relative w-[300px] md:w-[420px] h-[520px] rounded-[36px] overflow-hidden flex-shrink-0 snap-start group shadow-2xl"
+                  >
 
-                  {/* Image */}
+                    {/* Image */}
 
-                  <img
-                    src={tour.image}
-                    alt={tour.name}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
-                  />
+                    <Image
+                      src={tour.card.image}
+                      alt={tour.card.name}
+                      fill
+                      sizes="(min-width: 768px) 420px, 300px"
+                      draggable={false}
+                      className="object-cover group-hover:scale-110 transition-all duration-700"
+                    />
 
-                  {/* Overlay */}
+                    {/* Overlay */}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
-                  {/* Content */}
+                    {/* Content */}
 
-                  <div className="relative z-10 h-full flex flex-col justify-end p-8">
+                    <div className="relative z-10 h-full flex flex-col justify-end p-8">
 
-                    <h3 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
-                      {tour.name}
-                    </h3>
+                      <h3 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                        {tour.card.name}
+                      </h3>
 
-                    <p className="text-gray-200 leading-relaxed mb-6">
-                      {tour.description}
-                    </p>
+                      <p className="text-gray-200 leading-relaxed mb-6">
+                        {tour.card.description}
+                      </p>
 
-                    <Link
-                      href={tour.link}
-                      className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
-                    >
-                      View Experience
-                    </Link>
+                      <Link
+                        href={`/tours/${tour.slug}`}
+                        className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
+                      >
+                        View Experience
+                      </Link>
+
+                    </div>
 
                   </div>
 
-                </div>
+                ))}
 
-              ))}
+              </DragScroll>
 
-            </div>
+            </section>
 
-          </section>
+          ))}
 
-        ))}
+        </div>
 
       </div>
 
-    </div>
-       <Footer/>
+      <Footer/>
 
-</>
+    </>
   )
 }

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { whatsappUrl } from '../lib/site'
 
 const items = [
@@ -12,9 +13,9 @@ const items = [
   {
     title: "eSIM Packages",
     desc: "Stay connected from the moment you land.",
-    href: "/tours/e-sim",
+    href: "/esim",
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1713810186769-22021db83cc8?q=80&w=2070&auto=format&fit=crop"
   },
 
   {
@@ -30,7 +31,7 @@ const items = [
     desc: "Instant WhatsApp travel support.",
     href: whatsappUrl(),
     image:
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1704133508004-a0aceed83831?q=80&w=2070&auto=format&fit=crop"
   }
 ]
 
@@ -49,10 +50,12 @@ export default function Services() {
           >
 
             {/* Background Image */}
-            <img
+            <Image
               src={item.image}
-              className="absolute inset-0 w-full h-full object-cover"
               alt=""
+              fill
+              sizes="(min-width: 768px) 25vw, 100vw"
+              className="object-cover"
             />
 
             {/* Dark Overlay */}

@@ -1,8 +1,15 @@
-"use client"
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import { whatsappUrl } from '../../lib/site'
 
-import Navbar from '../../../components/Navbar'
-import Footer from '../../../components/Footer'
-import { whatsappUrl } from '../../../lib/site'
+export const metadata = {
+  title: 'eSIM Packages',
+  description:
+    'Stay connected in Turkey, Europe and worldwide with instant eSIM data packages. QR code activation, no physical SIM needed.',
+  alternates: {
+    canonical: '/esim',
+  },
+}
 
 const plans = [
   {

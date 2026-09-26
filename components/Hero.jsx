@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { whatsappUrl } from '../lib/site'
 
@@ -6,13 +7,16 @@ export default function Hero() {
     <section className="min-h-screen flex items-center justify-center text-center px-6 relative overflow-hidden">
 
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center scale-105"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')",
-        }}
-      ></div>
+      <Image
+        src="https://images.unsplash.com/photo-1789313946334-06674df4b775"
+        alt="New Mosque and ferries on the Golden Horn at dusk, Istanbul"
+        fill
+        preload
+        sizes="100vw"
+        className="object-cover scale-105"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-black/65 to-black/80"></div>
 
       {/* Gold Glow */}
       <div className="absolute w-[500px] h-[500px] bg-yellow-500/20 blur-[60px] rounded-full top-[-150px]"></div>

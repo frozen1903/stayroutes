@@ -1,16 +1,17 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 const vehicles = [
   {
     title: "Mercedes VIP Vito",
     image:
-      "https://otoyazar.com/wp-content/uploads/2020/08/vito-tourer.jpg"
+      "https://images.unsplash.com/photo-1765461734605-34657fa04db2?q=80&w=2070&auto=format&fit=crop"
   },
 
   {
     title: "Mercedes Sprinter",
     image:
-      "https://www.shouf.io/cdn/shop/files/MercedesSprinter.2-1-491958.webp?v=1730216516"
+      "https://images.unsplash.com/photo-1688619103602-35c5b27a6619?q=80&w=2070&auto=format&fit=crop"
   }
 ]
 
@@ -43,10 +44,12 @@ export default function Fleet() {
             className="relative overflow-hidden rounded-[32px] min-h-[400px] group shadow-2xl"
           >
 
-            <img
+            <Image
               src={item.image}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
+              alt={item.title}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover group-hover:scale-110 transition-all duration-700"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
