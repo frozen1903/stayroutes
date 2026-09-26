@@ -3,6 +3,9 @@ import Link from 'next/link'
 
 // Tur kartı: /tours listesi, ana sayfadaki "Popular Tours" ve tur sayfalarındaki "You may also like" bölümünde kullanılır.
 // Boyut dışarıdan className ile verilir (örn. sabit genişlikli yatay liste ya da grid).
+//
+// Kartın tamamı tıklanabilir: başlıktaki linkin ::after'ı tüm kartı kaplar ("stretched link").
+// Link başlıkta durur çünkü butondaki backdrop-blur, ::after'ı butonun içine hapseder.
 export default function TourCard({ tour, className = 'h-[440px]', sizes = '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw', headingLevel = 'h3' }) {
   const Heading = headingLevel
 
@@ -13,7 +16,7 @@ export default function TourCard({ tour, className = 'h-[440px]', sizes = '(min-
 
       <Image
         src={tour.card.image}
-        alt={tour.card.name}
+        alt=""
         fill
         sizes={sizes}
         draggable={false}
@@ -29,20 +32,25 @@ export default function TourCard({ tour, className = 'h-[440px]', sizes = '(min-
       <div className="relative z-10 h-full flex flex-col justify-end p-8">
 
         <Heading className="text-3xl md:text-4xl font-black mb-4 leading-tight">
-          {tour.card.name}
+          <Link
+            href={`/tours/${tour.slug}`}
+            draggable={false}
+            className="after:absolute after:inset-0 after:content-[''] after:rounded-[36px] focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-yellow-400"
+          >
+            {tour.card.name}
+          </Link>
         </Heading>
 
         <p className="text-gray-200 leading-relaxed mb-6">
           {tour.card.description}
         </p>
 
-        <Link
-          href={`/tours/${tour.slug}`}
-          className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
+        <span
+          aria-hidden="true"
+          className="bg-white/10 backdrop-blur-md border border-white/10 group-hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
         >
           View Experience
-          <span className="sr-only">: {tour.card.name}</span>
-        </Link>
+        </span>
 
       </div>
 
