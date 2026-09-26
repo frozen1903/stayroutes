@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Island Experience',
   title: 'Princes Islands Tour',
+  seoTitle: 'Princes’ Islands Tour from Istanbul',
   heroImage: 'https://images.unsplash.com/photo-1603119526167-9f0bf4358694?q=80&w=2070&auto=format&fit=crop',
   intro: 'Escape the busy city and discover peaceful islands, seaside streets and unforgettable views near Istanbul.',
 

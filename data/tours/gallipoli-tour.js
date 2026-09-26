@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Ancient Turkey',
   title: 'Gallipoli Tour',
+  seoTitle: 'Gallipoli Battlefield & Memorials Tour',
   heroImage: 'https://images.unsplash.com/photo-1665841549320-72c77b0d2f40?q=80&w=2070&auto=format&fit=crop',
   intro: 'Follow the Gallipoli peninsula with memorial sites, battlefield viewpoints and guided historical context throughout the day.',
   aboutTitle: 'A Respectful Historical Peninsula Route',

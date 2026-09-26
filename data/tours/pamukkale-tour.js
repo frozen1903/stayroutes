@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Ancient Turkey',
   title: 'Pamukkale Tour',
+  seoTitle: 'Pamukkale & Hierapolis Tour: White Travertines',
   heroImage: 'https://images.unsplash.com/photo-1728466698701-2eb2af4117d4?q=80&w=2070&auto=format&fit=crop',
   intro: 'Discover white travertine terraces, thermal waters and the ancient city of Hierapolis in one unforgettable Turkey experience.',
 

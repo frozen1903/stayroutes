@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import TourCard from './TourCard'
 import { site, whatsappUrl } from '../lib/site'
 
 function bookingMessage(title, packageName) {
@@ -34,7 +35,7 @@ function SectionHeading({ eyebrow, title, className = 'mb-14' }) {
   )
 }
 
-export default function TourDetail({ tour }) {
+export default function TourDetail({ tour, related = [] }) {
   const {
     title,
     eyebrow,
@@ -413,6 +414,31 @@ export default function TourDetail({ tour }) {
 
                   <p className="text-gray-400">{item.answer}</p>
                 </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related Tours */}
+
+        {related.length > 0 && (
+          <section className="mx-auto max-w-7xl px-6 pb-24">
+            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <SectionHeading eyebrow="More Experiences" title="You May Also Like" className="" />
+              </div>
+
+              <Link
+                href="/tours"
+                className="w-fit text-sm uppercase tracking-[3px] text-yellow-400 hover:text-yellow-300"
+              >
+                View All Tours →
+              </Link>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {related.map((relatedTour) => (
+                <TourCard key={relatedTour.slug} tour={relatedTour} />
               ))}
             </div>
           </section>

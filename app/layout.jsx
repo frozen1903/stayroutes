@@ -1,11 +1,13 @@
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
 import MobileNav from '../components/MobileNav'
+import WhatsAppTracker from '../components/WhatsAppTracker'
 import { site } from '../lib/site'
 
 export const metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Premium Travel Concierge in Turkey`,
+    default: `${site.name} | VIP Istanbul Airport Transfers & Private Tours`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -34,6 +36,8 @@ export default function RootLayout({ children }) {
       <body className="pb-28 md:pb-0">
         {children}
         <MobileNav />
+        <WhatsAppTracker />
+        <Analytics />
       </body>
     </html>
   )

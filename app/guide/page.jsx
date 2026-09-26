@@ -178,7 +178,7 @@ export default function GuidePage() {
 
           </section>
 
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-400 text-sm">
             Last updated: {guide.updated}. Rules and prices can change — check official sources before you travel.
           </p>
 

@@ -71,7 +71,7 @@ export default function Footer() {
 
         {/* Bottom */}
 
-        <div className="border-t border-white/10 mt-14 pt-8 text-center text-gray-500 text-sm">
+        <div className="border-t border-white/10 mt-14 pt-8 text-center text-gray-400 text-sm">
 
           © {new Date().getFullYear()} {site.name}. All rights reserved.
 

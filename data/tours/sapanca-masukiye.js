@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Nature Escape Experience',
   title: 'Sapanca & Maşukiye Tour',
+  seoTitle: 'Sapanca Lake & Maşukiye Day Trip from Istanbul',
   heroImage: 'https://images.unsplash.com/photo-1655447084331-471bce072754?q=80&w=2070&auto=format&fit=crop',
   intro: 'Escape the city and discover lakes, waterfalls, forests and breathtaking mountain views just a short drive from Istanbul.',
 

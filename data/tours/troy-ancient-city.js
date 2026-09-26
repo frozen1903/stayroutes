@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Ancient Turkey',
   title: 'Troy Ancient City',
+  seoTitle: 'Troy Ancient City & Trojan Horse Tour',
   heroImage: 'https://images.unsplash.com/photo-1716274644458-d30c57acdeb4?q=80&w=2070&auto=format&fit=crop',
   intro: 'Visit the legendary city of Troy, where archaeology and mythology meet across ancient walls, gates and layered ruins.',
   aboutTitle: 'Myth, Archaeology And Ancient Walls',

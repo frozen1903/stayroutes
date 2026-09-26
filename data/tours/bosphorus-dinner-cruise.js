@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Istanbul Experience',
   title: 'Bosphorus Dinner Cruise',
+  seoTitle: 'Bosphorus Dinner Cruise in Istanbul',
   heroImage: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=2070&auto=format&fit=crop',
   intro: 'Luxury dinner cruise experience with live entertainment, Bosphorus skyline views and unforgettable Istanbul nights.',
 

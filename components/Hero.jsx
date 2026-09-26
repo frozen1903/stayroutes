@@ -25,18 +25,18 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl">
 
         <p className="text-yellow-400 tracking-[6px] uppercase mb-6 text-sm font-semibold">
-          Luxury Digital Concierge
+          StayRoute · Istanbul Travel Concierge
         </p>
 
-        <h1 className="text-6xl md:text-8xl font-black leading-tight mb-8">
-          Welcome To
+        <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+          VIP Airport Transfers
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-100">
-            StayRoute
+            &amp; Private Tours in Istanbul
           </span>
         </h1>
 
         <p className="text-gray-300 text-lg md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed">
-          VIP airport transfers, curated tours and travel concierge services across Turkey, directly from your phone.
+          Meet &amp; greet pickups from IST and SAW, Bosphorus cruises, Cappadocia and Old City tours — booked in minutes on WhatsApp.
         </p>
 
         {/* Buttons */}

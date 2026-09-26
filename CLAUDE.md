@@ -19,8 +19,10 @@ Tüm rezervasyonlar WhatsApp üzerinden alınıyor (backend yok). İçerik İngi
 ```
 lib/site.js             marka adı, site URL'i, açıklama, WhatsApp numarası, sosyal linkler + whatsappUrl(message)
 lib/imageLoader.js      next/image loader: Unsplash görsellerini Unsplash CDN'inden boyutlandırır
+lib/schema.js           schema.org JSON-LD üreticileri (TravelAgency, TouristTrip, Service, FAQPage, BreadcrumbList)
 data/tours/
-  index.js              tours listesi (sıra = /tours sırası), categories, getTour(), toursInCategory()
+  index.js              tours listesi (sıra = /tours sırası), categories, getTour(), toursInCategory(),
+                        featuredSlugs/featuredTours() (ana sayfa), relatedTours() (tur sayfası altı)
   <slug>.js             her turun tüm içeriği (metin, görseller, paketler, SSS...)
 data/guide.js           Istanbul seyahat rehberi içeriği (bölümler + SSS); `updated` tarihini güncel tut
 app/
@@ -37,6 +39,11 @@ components/
   TourDetail.jsx        tur detay şablonu; tüm bölümler veriye göre isteğe bağlı render edilir
   TransferForm.jsx      transfer formu (client): doğrulama, araç önerisi, ?vehicle=vito|sprinter ön seçimi -> WhatsApp mesajı
   DragScroll.jsx        masaüstünde sürükleyerek yatay kaydırma (client)
+  TourCard.jsx          ortak tur kartı (/tours, PopularTours, You May Also Like)
+  PopularTours.jsx      ana sayfadaki öne çıkan turlar
+  NavLink.jsx           menü linki: aynı sayfada başa kaydırır, aktif sayfayı vurgular (client)
+  JsonLd.jsx            <script type="application/ld+json"> yardımcı bileşeni
+  WhatsAppTracker.jsx   tüm wa.me tıklamalarını Vercel Analytics'e "WhatsApp Click" olarak gönderir (client)
   Navbar.jsx            üst menü + mobil çekmece menü (client)
   MobileNav.jsx         mobil alt menü + masaüstü WhatsApp butonu (layout'ta, her sayfada)
   Hero, Services, Fleet, Reviews, Footer
@@ -57,6 +64,18 @@ next.config.js          custom image loader; redirect'ler: /tours/sapanca-masuk�
 - URL slug'ları sadece ASCII (Türkçe karakter yok).
 - Next 16: `params` bir Promise, `await params` ile okunur. Değişiklik yapmadan önce `node_modules/next/dist/docs/` kontrol et.
 - Çalışma dizinindeki dosyalar CRLF; `core.autocrlf=true` commit'te normalize ediyor.
+
+## SEO
+
+- Her sayfanın anahtar kelimeli bir title'ı ve tek bir H1'i olmalı. Turlarda Google başlığı `seoTitle`, sayfadaki H1 `title`.
+- Title şablonu "%s | StayRoute"; title'ı ~60 karakter altında tut. Ana sayfa `title.absolute` kullanır.
+- JSON-LD: ana sayfa TravelAgency; turlar TouristTrip + BreadcrumbList (+ FAQPage varsa); transfer Service + FAQPage; guide FAQPage.
+  Gerçek telefon gelince organizationSchema'ya `telephone`, fiyatlar gelince tourSchema'ya `offers` ekle.
+- Lighthouse (Eylül 2026): SEO 100, erişilebilirlik 100 (ana sayfa, transfer, tur). Gri metinlerde en az `text-gray-400` kullan (kontrast).
+- Form alanları `Field` ile label'a bağlı (htmlFor/id); yeni alan eklerken `Field` içine tek bir input/select koy.
+- Analytics: `@vercel/analytics` layout'ta. Vercel panelinde Analytics sekmesinden etkinleştirilmeli. Özel olaylar
+  ("WhatsApp Click", "Transfer Form Submit") Vercel Pro planda görünür; Hobby'de sayfa görüntülemeleri görünür.
+- Özel domain bağlanınca: `site.url` güncelle + stayroutes.vercel.app -> domain kalıcı redirect ekle + Search Console'a sitemap gönder.
 
 ## Tur ekleme / düzenleme
 

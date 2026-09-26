@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { cloneElement, isValidElement, useEffect, useId, useState } from "react"
 import { site, whatsappUrl } from "../lib/site"
 
 const TRANSFER_TYPES = [
@@ -152,18 +152,30 @@ function resizePassengers(passengers, adults, children) {
 const inputClass = (error) =>
   `w-full bg-black/30 border rounded-2xl px-5 py-4 [color-scheme:dark] ${error ? "border-red-400" : "border-white/10"}`
 
+// Etiketi alana (htmlFor/id) ve hata mesajını aria-describedby ile bağlar
 function Field({ label, error, optional, children }) {
+  const id = useId()
+  const errorId = `${id}-error`
+
+  const control = isValidElement(children)
+    ? cloneElement(children, {
+        id,
+        "aria-invalid": error ? true : undefined,
+        "aria-describedby": error ? errorId : undefined,
+      })
+    : children
+
   return (
     <div>
-      <label className="text-sm text-gray-400 block mb-3">
+      <label htmlFor={id} className="text-sm text-gray-400 block mb-3">
         {label}
-        {optional && <span className="text-gray-600"> (optional)</span>}
+        {optional && <span className="text-gray-400"> (optional)</span>}
       </label>
 
-      {children}
+      {control}
 
       {error && (
-        <p className="text-red-400 text-sm mt-2">{error}</p>
+        <p id={errorId} className="text-red-400 text-sm mt-2">{error}</p>
       )}
     </div>
   )
@@ -556,7 +568,7 @@ export default function TransferForm() {
         Continue via WhatsApp
       </button>
 
-      <p className="text-gray-500 text-sm text-center -mt-2">
+      <p className="text-gray-400 text-sm text-center -mt-2">
         Your request opens in WhatsApp. Nothing is sent until you press send.
       </p>
 

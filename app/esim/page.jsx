@@ -1,9 +1,21 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import { whatsappUrl } from '../../lib/site'
+import { site, whatsappUrl } from '../../lib/site'
+
+function esimMessage(plan) {
+  return [
+    `Hello ${site.name},`,
+    '',
+    `I'd like to buy an eSIM: ${plan.country} ${plan.gb} / ${plan.days} (${plan.price})`,
+    'Phone model:',
+    'Travel dates:',
+    '',
+    'Please send payment details.',
+  ].join('\n')
+}
 
 export const metadata = {
-  title: 'eSIM Packages',
+  title: 'Turkey eSIM for Tourists: Instant Data Packages',
   description:
     'Stay connected in Turkey, Europe and worldwide with instant eSIM data packages. QR code activation, no physical SIM needed.',
   alternates: {
@@ -78,7 +90,7 @@ export default function EsimPage() {
           </p>
 
           <h1 className="text-5xl md:text-7xl font-black mb-6">
-            Premium eSIM Packages
+            Turkey eSIM Packages
           </h1>
 
           <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -155,7 +167,7 @@ export default function EsimPage() {
                 <div>
 
                   <p className={`text-sm ${
-                    plan.popular ? "text-black/60" : "text-gray-500"
+                    plan.popular ? "text-black/60" : "text-gray-400"
                   }`}>
                     Starting From
                   </p>
@@ -167,7 +179,7 @@ export default function EsimPage() {
                 </div>
 
                 <a
-                  href={whatsappUrl()}
+                  href={whatsappUrl(esimMessage(plan))}
                   className={`px-6 py-4 rounded-2xl font-bold transition-all ${
                     plan.popular
                       ? "bg-black text-white hover:bg-neutral-900"

@@ -2,7 +2,28 @@ import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import TransferForm from '../../components/TransferForm'
+import JsonLd from '../../components/JsonLd'
 import { site, whatsappUrl } from '../../lib/site'
+import { breadcrumbSchema, faqSchema, transferServiceSchema } from '../../lib/schema'
+
+const faq = [
+  {
+    question: 'Do you monitor flight delays?',
+    answer: 'Yes. Our team tracks flight schedules and adjusts pickup times automatically.',
+  },
+  {
+    question: 'Are transfers private?',
+    answer: 'Yes. All transfers are private and reserved exclusively for your group.',
+  },
+  {
+    question: 'Can I request a child seat?',
+    answer: 'Absolutely. Child seats can be arranged upon request.',
+  },
+  {
+    question: 'Can I pay in cash?',
+    answer: 'Payment options will be discussed during confirmation.',
+  },
+]
 
 const customTransferMessage = `Hello ${site.name},
 
@@ -17,7 +38,12 @@ Please provide availability and pricing.`
 export default function TransferPage() {
 
 return (
-<> <Navbar />
+<>
+  <JsonLd data={transferServiceSchema()} />
+  <JsonLd data={faqSchema(faq)} />
+  <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '' }, { name: 'Airport Transfer', path: '/transfer' }])} />
+
+  <Navbar />
 
 
   <div className="min-h-screen">
@@ -44,7 +70,7 @@ return (
         </p>
 
         <h1 className="text-5xl md:text-8xl font-black max-w-5xl mb-8">
-          VIP Airport Transfers
+          VIP Istanbul Airport Transfers
         </h1>
 
         <p className="max-w-3xl text-lg md:text-2xl text-gray-200 leading-relaxed mb-10">
@@ -284,53 +310,19 @@ return (
 
       <div className="space-y-6">
 
-        <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
+        {faq.map((item) => (
+          <div key={item.question} className="bg-white/5 border border-white/10 rounded-[32px] p-8">
 
-          <h3 className="text-2xl font-bold mb-4">
-            Do you monitor flight delays?
-          </h3>
+            <h3 className="text-2xl font-bold mb-4">
+              {item.question}
+            </h3>
 
-          <p className="text-gray-400">
-            Yes. Our team tracks flight schedules and adjusts pickup times automatically.
-          </p>
+            <p className="text-gray-400">
+              {item.answer}
+            </p>
 
-        </div>
-
-        <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
-
-          <h3 className="text-2xl font-bold mb-4">
-            Are transfers private?
-          </h3>
-
-          <p className="text-gray-400">
-            Yes. All transfers are private and reserved exclusively for your group.
-          </p>
-
-        </div>
-
-        <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
-
-          <h3 className="text-2xl font-bold mb-4">
-            Can I request a child seat?
-          </h3>
-
-          <p className="text-gray-400">
-            Absolutely. Child seats can be arranged upon request.
-          </p>
-
-        </div>
-
-        <div className="bg-white/5 border border-white/10 rounded-[32px] p-8">
-
-          <h3 className="text-2xl font-bold mb-4">
-            Can I pay in cash?
-          </h3>
-
-          <p className="text-gray-400">
-            Payment options will be discussed during confirmation.
-          </p>
-
-        </div>
+          </div>
+        ))}
 
       </div>
 

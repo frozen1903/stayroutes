@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Ancient Turkey',
   title: 'Ephesus Ancient City',
+  seoTitle: 'Ephesus Ancient City Tour: Celsus Library & Great Theatre',
   heroImage: 'https://images.unsplash.com/photo-1582380625189-423697e32b92?q=80&w=2070&auto=format&fit=crop',
   intro: "Explore marble streets, Roman monuments and the legendary Celsus Library in one of Turkey's most impressive ancient cities.",
   aboutTitle: 'A Walk Through The Ancient Aegean',

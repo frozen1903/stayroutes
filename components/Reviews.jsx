@@ -65,7 +65,7 @@ export default function Reviews() {
                 {review.name}
               </h3>
 
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-400 text-sm">
                 {review.country}
               </p>
 

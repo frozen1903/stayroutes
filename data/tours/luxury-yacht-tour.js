@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Luxury Experience',
   title: 'Luxury Yacht Tour',
+  seoTitle: 'Private Luxury Yacht Tour on the Bosphorus',
   heroImage: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop',
   intro: 'Discover Istanbul from a private luxury yacht with breathtaking Bosphorus views, premium service and unforgettable moments.',
 

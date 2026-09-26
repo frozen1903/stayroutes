@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import TourDetail from '../../../components/TourDetail'
-import { tours, getTour } from '../../../data/tours'
+import JsonLd from '../../../components/JsonLd'
+import { tours, getTour, relatedTours } from '../../../data/tours'
+import { breadcrumbSchema, faqSchema, tourSchema } from '../../../lib/schema'
 
 // Listede olmayan slug'lar 404 döner
 export const dynamicParams = false
@@ -36,5 +38,19 @@ export default async function TourPage({ params }) {
 
   if (!tour) notFound()
 
-  return <TourDetail tour={tour} />
+  return (
+    <>
+      <JsonLd data={tourSchema(tour)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', path: '' },
+          { name: 'Tours', path: '/tours' },
+          { name: tour.card.name, path: `/tours/${tour.slug}` },
+        ])}
+      />
+      {tour.faq && <JsonLd data={faqSchema(tour.faq)} />}
+
+      <TourDetail tour={tour} related={relatedTours(tour.slug)} />
+    </>
+  )
 }

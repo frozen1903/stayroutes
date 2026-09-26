@@ -9,6 +9,7 @@ const tour = {
 
   eyebrow: 'Historical Experience',
   title: 'Old City Tour',
+  seoTitle: 'Istanbul Old City Tour: Hagia Sophia, Blue Mosque & Bazaar',
   heroImage: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=2070&auto=format&fit=crop',
   intro: 'Explore the heart of Istanbul with professional guides, historical landmarks and unforgettable cultural experiences.',
 

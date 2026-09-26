@@ -3,7 +3,7 @@ import Footer from '../../components/Footer'
 import { site } from '../../lib/site'
 
 export const metadata = {
-  title: 'Why Us',
+  title: 'Why Travel With Us: Istanbul Concierge Service',
   description:
     'Luxury transportation, premium tours and personalized concierge services designed for modern travelers in Turkey.',
   alternates: {
@@ -48,7 +48,7 @@ export default function Services() {
 
       <Navbar/>
       
-    <section className="max-w-7xl mx-auto px-6 py-24">
+    <section className="max-w-7xl mx-auto px-6 pt-32 pb-24">
 
       {/* Heading */}
 
@@ -58,9 +58,9 @@ export default function Services() {
           Why Choose {site.name}
         </p>
 
-        <h2 className="text-4xl md:text-6xl font-black mb-6">
+        <h1 className="text-4xl md:text-6xl font-black mb-6">
           Premium Concierge Experience
-        </h2>
+        </h1>
 
         <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
           Luxury transportation, premium tours and personalized concierge services designed for modern travelers.
