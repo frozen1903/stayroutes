@@ -1,6 +1,5 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import DragScroll from '../../components/DragScroll'
 import TourCard from '../../components/TourCard'
 import { categories, toursInCategory } from '../../data/tours'
 
@@ -13,13 +12,18 @@ export const metadata = {
   },
 }
 
+// 3'ün katı kadar tur varsa masaüstünde 3 sütun, değilse 2 sütun (örn. 4 tur -> 2x2)
+function gridColumns(count) {
+  return count % 3 === 0 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2'
+}
+
 export default function ToursPage() {
   return (
     <>
 
       <Navbar/>
 
-      <div className="min-h-screen px-6 pt-32 pb-28">
+      <div className="min-h-screen max-w-7xl mx-auto px-6 pt-32 pb-28">
 
         {/* Hero */}
 
@@ -57,20 +61,22 @@ export default function ToursPage() {
 
               </div>
 
-              {/* Scroll Area */}
+              {/* Tours Grid */}
 
-              <DragScroll className="drag-scroll flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 no-scrollbar cursor-grab active:cursor-grabbing select-none">
+              <div className={`grid gap-6 ${gridColumns(toursInCategory(category.id).length)}`}>
 
                 {toursInCategory(category.id).map((tour) => (
                   <TourCard
                     key={tour.slug}
                     tour={tour}
-                    className="w-[300px] md:w-[420px] h-[520px] flex-shrink-0 snap-start"
-                    sizes="(min-width: 768px) 420px, 300px"
+                    className="h-[440px] md:h-[480px]"
+                    sizes={toursInCategory(category.id).length % 3 === 0
+                      ? '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
+                      : '(min-width: 768px) 50vw, 100vw'}
                   />
                 ))}
 
-              </DragScroll>
+              </div>
 
             </section>
 

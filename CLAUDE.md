@@ -28,7 +28,7 @@ data/guide.js           Istanbul seyahat rehberi içeriği (bölümler + SSS); `
 app/
   layout.jsx            root layout, metadataBase, varsayılan OpenGraph, MobileNav
   page.jsx              ana sayfa
-  tours/page.jsx        tur listesi (data'dan, kategori bazlı)
+  tours/page.jsx        tur listesi (data'dan, kategori bazlı grid: 3'ün katıysa 3 sütun, değilse 2 sütun)
   tours/[slug]/page.jsx tüm tur detay sayfaları (generateStaticParams + generateMetadata, dynamicParams=false)
   transfer/page.jsx     metadata + TransferPage.jsx (sayfa içeriği, sunucu bileşeni)
   esim/page.jsx         eSIM paketleri
@@ -38,8 +38,7 @@ app/
 components/
   TourDetail.jsx        tur detay şablonu; tüm bölümler veriye göre isteğe bağlı render edilir
   TransferForm.jsx      transfer formu (client): doğrulama, araç önerisi, ?vehicle=vito|sprinter ön seçimi -> WhatsApp mesajı
-  DragScroll.jsx        masaüstünde sürükleyerek yatay kaydırma (client)
-  TourCard.jsx          ortak tur kartı (/tours, PopularTours, You May Also Like)
+  TourCard.jsx          ortak tur kartı; kartın tamamı tıklanabilir (başlıktaki stretched link). /tours grid düzeninde
   PopularTours.jsx      ana sayfadaki öne çıkan turlar
   NavLink.jsx           menü linki: aynı sayfada başa kaydırır, aktif sayfayı vurgular (client)
   JsonLd.jsx            <script type="application/ld+json"> yardımcı bileşeni

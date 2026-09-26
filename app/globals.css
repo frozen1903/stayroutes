@@ -8,19 +8,6 @@ body{
   font-family:Arial,sans-serif;
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.drag-scroll {
-  user-select: none;
-}
-
 select option {
   background: #07111f;
   color: white;
