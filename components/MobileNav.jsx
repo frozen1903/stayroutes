@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import NavLink from './NavLink'
 import { whatsappUrl } from '../lib/site'
 
 const links = [
@@ -27,14 +27,15 @@ export default function MobileNav() {
         <div className="bg-black/70 backdrop-blur-2xl border border-white/10 rounded-3xl flex items-center justify-around py-4 shadow-2xl">
 
           {links.map((link) => (
-            <Link
+            <NavLink
               key={link.href}
               href={link.href}
               className="flex flex-col items-center text-xs text-white"
+              activeClassName="!text-yellow-400"
             >
               <span className="text-2xl mb-1">{link.icon}</span>
               {link.label}
-            </Link>
+            </NavLink>
           ))}
 
           <a

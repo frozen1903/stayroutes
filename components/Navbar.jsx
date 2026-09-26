@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import NavLink from "./NavLink"
 import { useState } from "react"
 import { site, whatsappUrl } from "../lib/site"
 
@@ -27,7 +27,7 @@ export default function Navbar() {
 
         <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl px-5 h-16 flex items-center justify-between shadow-2xl">
 
-          <Link href="/" aria-label={`${site.name} home`}>
+          <NavLink href="/" aria-label={`${site.name} home`}>
 
             <img
               src="/logo.png"
@@ -35,20 +35,21 @@ export default function Navbar() {
               className="h-28 w-auto scale-[1.2] mt-2 object-contain cursor-pointer"
             />
 
-          </Link>
+          </NavLink>
 
           {/* Desktop Menu */}
 
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-200">
 
             {links.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
                 className="hover:text-yellow-400 transition-all"
+                activeClassName="text-yellow-400"
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
 
           </div>
@@ -106,14 +107,15 @@ export default function Navbar() {
           <div className="flex flex-col gap-6 text-lg">
 
             {links.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
                 onClick={close}
                 className="border-b border-white/10 pb-4"
+                activeClassName="text-yellow-400"
               >
                 {link.icon} {link.label}
-              </Link>
+              </NavLink>
             ))}
 
             <a

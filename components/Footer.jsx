@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import NavLink from './NavLink'
 import { site, whatsappUrl } from '../lib/site'
 
 export default function Footer() {
@@ -33,11 +33,11 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4 text-gray-300">
 
-              <Link href="/transfer">Airport Transfer</Link>
-              <Link href="/tours">Tours</Link>
-              <Link href="/esim">eSIM Packages</Link>
-              <Link href="/guide">Istanbul Travel Guide</Link>
-              <Link href="/services">Why Us</Link>
+              <NavLink href="/transfer">Airport Transfer</NavLink>
+              <NavLink href="/tours">Tours</NavLink>
+              <NavLink href="/esim">eSIM Packages</NavLink>
+              <NavLink href="/guide">Istanbul Travel Guide</NavLink>
+              <NavLink href="/services">Why Us</NavLink>
 
             </div>
 
