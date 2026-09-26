@@ -22,6 +22,7 @@ lib/imageLoader.js      next/image loader: Unsplash görsellerini Unsplash CDN'i
 data/tours/
   index.js              tours listesi (sıra = /tours sırası), categories, getTour(), toursInCategory()
   <slug>.js             her turun tüm içeriği (metin, görseller, paketler, SSS...)
+data/guide.js           Istanbul seyahat rehberi içeriği (bölümler + SSS); `updated` tarihini güncel tut
 app/
   layout.jsx            root layout, metadataBase, varsayılan OpenGraph, MobileNav
   page.jsx              ana sayfa
@@ -30,6 +31,7 @@ app/
   transfer/page.jsx     metadata + TransferPage.jsx (sayfa içeriği, sunucu bileşeni)
   esim/page.jsx         eSIM paketleri
   services/page.jsx     "Why Us"
+  guide/page.jsx        Istanbul Travel Guide (data/guide.js'ten, FAQPage JSON-LD ile)
   sitemap.js, robots.js, not-found.jsx
 components/
   TourDetail.jsx        tur detay şablonu; tüm bölümler veriye göre isteğe bağlı render edilir
@@ -102,8 +104,10 @@ Durumlar: [ ] yapılacak, [x] tamam. İş bitince burayı güncelle.
 - [ ] Gerçek Google/TripAdvisor yorumları
 
 ### Faz 3 — Concierge özellikleri
-- [ ] Çoklu dil (EN / TR / AR / RU / DE), örn. `next-intl`
-- [ ] Şehir rehberi / faydalı bilgiler (ulaşım, para, acil numaralar)
+- [ ] Çoklu dil — ERTELENDİ (2026-09-26): müşterilerin çoğu İngilizce konuşuyor. Başka dillerden talep artarsa
+      yapılacak. Plan: EN ön eksiz kalır, diğerleri /tr /ar ..., eksik çeviri EN'e düşer, WhatsApp mesajları hep EN.
+- [x] Şehir rehberi: /guide (havalimanı, ulaşım, para/bahşiş, eSIM, acil durum, cami kuralları, pratik bilgiler, SSS).
+      Bilgiler Eylül 2026'da doğrulandı; TL fiyatı bilerek yazılmadı. Yılda en az bir kez gözden geçir.
 - [ ] Partner oteller için QR kodlu yönlendirme (isteğe bağlı, otele bağlı olmadan)
 
 ### Faz 4 — İleri seviye

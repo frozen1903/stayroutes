@@ -36,6 +36,7 @@ export default function Footer() {
               <Link href="/transfer">Airport Transfer</Link>
               <Link href="/tours">Tours</Link>
               <Link href="/esim">eSIM Packages</Link>
+              <Link href="/guide">Istanbul Travel Guide</Link>
               <Link href="/services">Why Us</Link>
 
             </div>

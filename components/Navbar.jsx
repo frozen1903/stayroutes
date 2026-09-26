@@ -9,6 +9,7 @@ const links = [
   { href: "/transfer", label: "Transfer", icon: "✈️" },
   { href: "/tours", label: "Tours", icon: "🗺️" },
   { href: "/esim", label: "eSIM", icon: "📶" },
+  { href: "/guide", label: "Travel Guide", icon: "🧭" },
   { href: "/services", label: "Why Us", icon: "✨" },
 ]
 

@@ -2,7 +2,7 @@ import { site } from '../lib/site'
 import { tours } from '../data/tours'
 
 export default function sitemap() {
-  const pages = ['', '/transfer', '/tours', '/esim', '/services']
+  const pages = ['', '/transfer', '/tours', '/esim', '/guide', '/services']
 
   return [
     ...pages.map((path) => ({
