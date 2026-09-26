@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import TourCard from './TourCard'
+import YouTubeEmbed from './YouTubeEmbed'
 import { site, whatsappUrl } from '../lib/site'
 
 function bookingMessage(title, packageName) {
@@ -61,6 +62,7 @@ export default function TourDetail({ tour, related = [] }) {
     gallery,
     faq,
     cta,
+    video,
   } = tour
 
   const sideImage = aboutImage || gallery?.[1]
@@ -257,6 +259,22 @@ export default function TourDetail({ tour, related = [] }) {
                 </div>
               ))}
             </div>
+          </section>
+        )}
+
+        {/* Video */}
+
+        {video && (
+          <section className="mx-auto max-w-5xl px-6 pb-24">
+            <SectionHeading eyebrow="Watch" title={video.heading || `See ${tour.card.name}`} />
+
+            <YouTubeEmbed id={video.youtubeId} title={video.title} />
+
+            {video.credit && (
+              <p className="mt-4 text-sm text-gray-400">
+                Video: {video.credit}
+              </p>
+            )}
           </section>
         )}
 

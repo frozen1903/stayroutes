@@ -44,6 +44,8 @@ const tour = {
     { time: '05:00 AM', title: 'Balloon Pickup', description: 'Early morning VIP pickup from your hotel.' },
     { time: '06:00 AM', title: 'Sunrise Balloon Flight', description: 'Fly above the valleys during sunrise.' },
     { time: '09:00 AM', title: 'Cave Hotel Breakfast', description: 'Traditional breakfast with panoramic valley views.' },
+    { time: '11:00 AM', title: 'Göreme & Fairy Chimneys', description: 'Guided visit to the Göreme Open Air Museum and the fairy chimneys of the Red Tour route.' },
+    { time: '05:30 PM', title: 'Sunset Valley', description: 'End the day at a panoramic viewpoint as the valleys glow at golden hour.' },
   ],
 
   packagesTitle: 'Choose Your Package',
@@ -133,16 +135,24 @@ const tour = {
   ],
 
   faq: [
-    { question: 'Is the balloon ride included?', answer: 'Depending on your selected package, balloon flights can be included or arranged separately.' },
+    { question: 'Is the balloon ride included?', answer: 'Yes. Every package includes a sunrise balloon flight — shared in Standard, a couple balloon ride in Couple Escape and a private balloon in Honeymoon VIP. Flights always depend on the morning weather.' },
     { question: 'How many days should I stay?', answer: 'We recommend at least 2-3 days to fully experience Cappadocia.' },
     { question: 'Do you provide hotel transfers?', answer: 'Yes. Private airport and hotel transfers can be arranged.' },
-    { question: 'Can children join the tours?', answer: 'Most experiences are suitable for families and children.' },
+    { question: 'Can children join the tours?', answer: 'Most experiences are suitable for families and children. Balloon operators usually set a minimum age and height for young passengers, so we confirm the details for your family when planning.' },
+    { question: 'What happens if the balloon flight is cancelled?', answer: 'Balloon flights depend on the weather and only take off when the aviation authority gives permission each morning, so wind, rain or fog can postpone or cancel a flight. This is why we recommend staying at least two nights, as another morning often gives you a second chance. Cancellations are more frequent in winter than in spring, summer and autumn.' },
   ],
 
   cta: {
     eyebrow: 'Start Your Journey',
     title: 'Ready To Explore Cappadocia?',
     text: 'Contact our concierge team and let us create your perfect Cappadocia experience.',
+  },
+
+  video: {
+    youtubeId: 'eD5MPt5iG-k',
+    title: 'Home of Cappadocia | Go Türkiye',
+    credit: 'Go Türkiye on YouTube',
+    heading: 'The Magic Of Cappadocia',
   },
 }
 

@@ -37,6 +37,7 @@ app/
   sitemap.js, robots.js, not-found.jsx
 components/
   TourDetail.jsx        tur detay şablonu; tüm bölümler veriye göre isteğe bağlı render edilir
+  YouTubeEmbed.jsx      hafif YouTube gömme (tıklanana kadar sadece kapak görseli, youtube-nocookie)
   TransferForm.jsx      transfer formu (client): doğrulama, araç önerisi, ?vehicle=vito|sprinter ön seçimi -> WhatsApp mesajı
   TourCard.jsx          ortak tur kartı; kartın tamamı tıklanabilir (başlıktaki stretched link). /tours grid düzeninde
   PopularTours.jsx      ana sayfadaki öne çıkan turlar
@@ -82,7 +83,11 @@ next.config.js          custom image loader; redirect'ler: /tours/sapanca-masuk�
   sayfa, liste kartı, sitemap ve metadata otomatik oluşur.
 - Zorunlu alanlar: slug, category ('istanbul' | 'beyond'), card {name, description, image}, eyebrow, title, heroImage, intro,
   aboutTitle, aboutText. Diğer tüm bölümler isteğe bağlı: secondaryText, inclusions, stats, aboutImage, highlights(+Title/Text),
-  timeline(+Title), details(+Eyebrow/Title), packages(+Title), gallery(+Title), faq, cta, seoTitle.
+  timeline(+Title), details(+Eyebrow/Title), packages(+Title), gallery(+Title), faq, cta, seoTitle,
+  video {youtubeId, title, credit, heading}.
+- İçerik standardı (tüm turlar buna göre dengelendi, Eylül 2026): 5–6 inclusions, 4 stats, 4 highlights (ikonlu),
+  4–6 timeline adımı, 3 detay bloğu, 3 paket (ortadaki featured), 3 galeri görseli, 4–5 SSS, cta, video.
+  Videolar sadece resmi/tarafsız kaynaklardan (Go Türkiye, TRT vb.), rakip tur şirketlerinden değil; oEmbed ile gömülebilirliği test et.
 - Paket "Select Package" ve "Reserve" butonları tur + paket adını içeren hazır WhatsApp mesajı açar.
 
 ## Bilinen sorunlar
