@@ -98,7 +98,7 @@ Durumlar: [ ] yapılacak, [x] tamam. İş bitince burayı güncelle.
 - [x] Her tur/paket butonu için hazır WhatsApp mesajı (tur + paket adı)
 - [ ] Paketlere "from €..." fiyat bilgisi (kullanıcı fiyatları en son verecek)
 - [x] Transfer formu: yön (geliş/gidiş/gidiş-dönüş), uçuş no, saat, otel/adres, yolcu, çocuk koltuğu, bagaj,
-      araç önerisi, iletişim, doğrulama
+      araç önerisi, her yolcunun ad soyadı (zorunlu, yolcu sayısı kadar alan), iletişim, doğrulama
 - [ ] Gerçek Google/TripAdvisor yorumları
 
 ### Faz 3 — Concierge özellikleri

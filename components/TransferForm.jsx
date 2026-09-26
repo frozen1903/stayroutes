@@ -36,7 +36,7 @@ const initialForm = {
   childSeats: 0,
   luggage: 1,
   vehicle: "",
-  name: "",
+  passengers: [""],
   phone: "",
   email: "",
   notes: "",
@@ -86,7 +86,11 @@ function validate(form, today) {
     errors.vehicle = `Vito fits up to ${VEHICLES.vito.maxGuests} guests and ${VEHICLES.vito.maxLuggage} suitcases. Please choose Sprinter.`
   }
 
-  if (!form.name.trim()) errors.name = "Please enter the lead passenger name."
+  form.passengers.forEach((name, i) => {
+    const parts = name.trim().split(/\s+/).filter(Boolean)
+    if (parts.length === 0) errors[`passenger${i}`] = "Please enter name and surname."
+    else if (parts.length < 2) errors[`passenger${i}`] = "Please enter both name and surname."
+  })
 
   if (form.phone.replace(/\D/g, "").length < 7) errors.phone = "Please enter a phone number with country code."
 
@@ -120,7 +124,9 @@ function buildMessage(form) {
     `Luggage: ${form.luggage} suitcase${form.luggage === 1 ? "" : "s"}`,
     `Vehicle: ${vehicle}`,
     "",
-    `Lead passenger: ${form.name.trim()}`,
+    "Passenger names:",
+    ...form.passengers.map((name, i) => `${i + 1}. ${name.trim()}${passengerTag(i, form.adults)}`),
+    "",
     `Phone: ${form.phone.trim()}`,
     form.email.trim() ? `Email: ${form.email.trim()}` : null,
     form.notes.trim() ? `Notes: ${form.notes.trim()}` : null,
@@ -129,6 +135,18 @@ function buildMessage(form) {
   ]
 
   return lines.filter((line) => line !== null).join("\n")
+}
+
+function passengerTag(index, adults) {
+  if (index === 0) return " (lead)"
+  if (index >= adults) return " (child)"
+  return ""
+}
+
+// Yolcu sayısı değişince isim listesini yeniden boyutlandırır, girilmiş isimleri korur
+function resizePassengers(passengers, adults, children) {
+  const count = Math.min(adults + children, MAX_GUESTS)
+  return Array.from({ length: count }, (_, i) => passengers[i] || "")
 }
 
 const inputClass = (error) =>
@@ -175,8 +193,17 @@ export default function TransferForm() {
   const update = (key, value) => {
     const next = { ...form, [key]: value }
     if (next.childSeats > next.children) next.childSeats = next.children
+    if (key === "adults" || key === "children") {
+      next.passengers = resizePassengers(form.passengers, next.adults, next.children)
+    }
     setForm(next)
     if (submitted) setErrors(validate(next, today || todayString()))
+  }
+
+  const updatePassenger = (index, value) => {
+    const passengers = [...form.passengers]
+    passengers[index] = value
+    update("passengers", passengers)
   }
 
   const handleSubmit = (e) => {
@@ -429,26 +456,54 @@ export default function TransferForm() {
         </Field>
       </div>
 
-      {/* Contact */}
+      {/* Passenger Names */}
 
-      <div className="bg-black/20 border border-white/10 rounded-[24px] md:rounded-[32px] p-4 md:p-6 grid gap-6" data-error={!!(errors.name || errors.phone || errors.email)}>
+      <div className="bg-black/20 border border-white/10 rounded-[24px] md:rounded-[32px] p-4 md:p-6 grid gap-6" data-error={form.passengers.some((_, i) => errors[`passenger${i}`])}>
 
-        <h3 className="text-2xl font-bold">
-          Lead Passenger
-        </h3>
+        <div>
+
+          <h3 className="text-2xl font-bold mb-2">
+            Passenger Names
+          </h3>
+
+          <p className="text-gray-400 text-sm">
+            Full name and surname of every passenger, as written in the passport.
+          </p>
+
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6">
 
-          <Field label="Full Name" error={errors.name}>
-            <input
-              type="text"
-              autoComplete="name"
-              placeholder="Name Surname"
-              value={form.name}
-              onChange={(e) => update("name", e.target.value)}
-              className={inputClass(errors.name)}
-            />
-          </Field>
+          {form.passengers.map((name, index) => (
+            <Field
+              key={index}
+              label={`Passenger ${index + 1}${passengerTag(index, form.adults)}`}
+              error={errors[`passenger${index}`]}
+            >
+              <input
+                type="text"
+                autoComplete={index === 0 ? "name" : "off"}
+                placeholder="Name Surname"
+                value={name}
+                onChange={(e) => updatePassenger(index, e.target.value)}
+                className={inputClass(errors[`passenger${index}`])}
+              />
+            </Field>
+          ))}
+
+        </div>
+
+      </div>
+
+      {/* Contact */}
+
+      <div className="bg-black/20 border border-white/10 rounded-[24px] md:rounded-[32px] p-4 md:p-6 grid gap-6" data-error={!!(errors.phone || errors.email)}>
+
+        <h3 className="text-2xl font-bold">
+          Contact Details
+        </h3>
+
+        <div className="grid md:grid-cols-2 gap-6">
 
           <Field label="Phone (with country code)" error={errors.phone}>
             <input
@@ -461,18 +516,18 @@ export default function TransferForm() {
             />
           </Field>
 
-        </div>
+          <Field label="Email" error={errors.email} optional>
+            <input
+              type="email"
+              autoComplete="email"
+              placeholder="you@example.com"
+              value={form.email}
+              onChange={(e) => update("email", e.target.value)}
+              className={inputClass(errors.email)}
+            />
+          </Field>
 
-        <Field label="Email" error={errors.email} optional>
-          <input
-            type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
-            value={form.email}
-            onChange={(e) => update("email", e.target.value)}
-            className={inputClass(errors.email)}
-          />
-        </Field>
+        </div>
 
       </div>
 
@@ -481,7 +536,7 @@ export default function TransferForm() {
       <Field label="Notes" optional>
         <textarea
           rows={3}
-          placeholder="Other passenger names, special requests, meet & greet sign name..."
+          placeholder="Special requests, meet & greet sign name, extra stops..."
           value={form.notes}
           onChange={(e) => update("notes", e.target.value)}
           className={`${inputClass()} resize-y`}
