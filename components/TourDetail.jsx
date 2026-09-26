@@ -375,14 +375,10 @@ export default function TourDetail({ tour, related = [] }) {
               <SectionHeading eyebrow="Gallery" title={galleryTitle || `${title} Moments`} className="mb-12" />
 
               <div className="grid gap-6 md:grid-cols-3">
-                {gallery.map((image, index) => (
+                {gallery.map((image) => (
                   <div
                     key={image.alt}
-                    className={
-                      index === 1
-                        ? 'relative h-[420px] overflow-hidden rounded-[32px] md:mt-12 md:h-[520px]'
-                        : 'relative h-[420px] overflow-hidden rounded-[32px] md:h-[520px]'
-                    }
+                    className="relative h-[420px] overflow-hidden rounded-[32px] md:h-[520px]"
                   >
                     <Image
                       src={image.src}
