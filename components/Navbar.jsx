@@ -1,10 +1,22 @@
 "use client"
 
+import Link from "next/link"
 import { useState } from "react"
+import { site, whatsappUrl } from "../lib/site"
+
+const links = [
+  { href: "/", label: "Home", icon: "🏠" },
+  { href: "/transfer", label: "Transfer", icon: "✈️" },
+  { href: "/tours", label: "Tours", icon: "🗺️" },
+  { href: "/tours/e-sim", label: "eSIM", icon: "📶" },
+  { href: "/services", label: "Why Us", icon: "✨" },
+]
 
 export default function Navbar() {
 
   const [open, setOpen] = useState(false)
+
+  const close = () => setOpen(false)
 
   return (
     <>
@@ -14,42 +26,38 @@ export default function Navbar() {
 
         <div className="max-w-7xl mx-auto bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl px-5 h-16 flex items-center justify-between shadow-2xl">
 
-           <a href="/">
+          <Link href="/" aria-label={`${site.name} home`}>
 
-      <img
-        src="/logo.png"
-        alt="StayRoute"
-        className="h-28 w-auto scale-[1.2] mt-2 object-contain cursor-pointer"
-      />
+            <img
+              src="/logo.png"
+              alt={site.name}
+              className="h-28 w-auto scale-[1.2] mt-2 object-contain cursor-pointer"
+            />
 
-    </a>
+          </Link>
+
           {/* Desktop Menu */}
 
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-200">
 
-            <a href="/" className="hover:text-yellow-400 transition-all">
-              Home
-            </a>
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-yellow-400 transition-all"
+              >
+                {link.label}
+              </Link>
+            ))}
 
-            <a href="/transfer" className="hover:text-yellow-400 transition-all">
-              Transfer
-            </a>
-
-            <a href="/tours" className="hover:text-yellow-400 transition-all">
-              Tours
-            </a>
-
-            <a href="/services" className="hover:text-yellow-400 transition-all">
-              Why Us
-            </a>
-
-            
-         </div>
+          </div>
 
           {/* Mobile Hamburger */}
 
           <button
             onClick={() => setOpen(!open)}
+            aria-label="Open menu"
+            aria-expanded={open}
             className="md:hidden text-3xl"
           >
             ☰
@@ -61,14 +69,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
 
-      <div className={`fixed inset-0 z-40 transition-all duration-300 ${
+      <div className={`fixed inset-0 z-50 transition-all duration-300 ${
         open ? "opacity-100 visible" : "opacity-0 invisible"
       }`}>
 
         {/* Overlay */}
 
         <div
-          onClick={() => setOpen(false)}
+          onClick={close}
           className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         ></div>
 
@@ -85,7 +93,8 @@ export default function Navbar() {
             </h2>
 
             <button
-              onClick={() => setOpen(false)}
+              onClick={close}
+              aria-label="Close menu"
               className="text-3xl"
             >
               ✕
@@ -95,56 +104,32 @@ export default function Navbar() {
 
           <div className="flex flex-col gap-6 text-lg">
 
-            <a href="/" className="border-b border-white/10 pb-4">
-              🏠 Home
-            </a>
-
-            <a href="/transfer" className="border-b border-white/10 pb-4">
-              ✈️ Airport Transfer
-            </a>
-
-            <a href="/tours" className="border-b border-white/10 pb-4">
-              🗺️ Tours
-            </a>
-
-            <a href="/services" className="border-b border-white/10 pb-4">
-              🛎️ Hotel Services
-            </a>
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                className="border-b border-white/10 pb-4"
+              >
+                {link.icon} {link.label}
+              </Link>
+            ))}
 
             <a
-              href="https://wa.me/902125119292"
+              href={whatsappUrl()}
               className="border-b border-white/10 pb-4 text-green-400"
             >
-              💬 WhatsApp Reception
+              💬 WhatsApp Concierge
             </a>
 
-            <a
-              href="https://www.google.com/travel/search?gsas=1&ts=EggKAggDCgIIAxocEhoSFAoHCOkPEAoYDxIHCOkPEAoYEBgBMgIQAA&qs=MhNDZ29JX2RDUGl1elF4dXRYRUFFOAI&ap=ugEHcmV2aWV3cw&ictx=111&rlz=1C1GCEA_enTR1034TR1034&biw=1707&bih=801&hl=tr-TR&ved=0CAAQ5JsGahcKEwi45rabuMiUAxUAAAAAHQAAAAAQBA"
-              className="border-b border-white/10 pb-4"
-            >
-              ⭐ Google Reviews
-            </a>
-
-            <a
-              href="https://www.tripadvisor.com.tr/Hotel_Review-g293974-d19141459-Reviews-Pell_Palace_Hotel_Spa-Istanbul.html"
-              className="border-b border-white/10 pb-4"
-            >
-              🏆 TripAdvisor
-            </a>
-
-            <a
-              href="https://www.instagram.com/pellpalace?igshid=1fu2b8uwr8g52"
-              className="border-b border-white/10 pb-4"
-            >
-              📸 Instagram
-            </a>
-
-            <a
-              href="https://maps.google.com/?q=Pell+Palace+Hotel+Spa+Istanbul"
-              className="border-b border-white/10 pb-4"
-            >
-              📍 Hotel Location
-            </a>
+            {site.social.instagram && (
+              <a
+                href={site.social.instagram}
+                className="border-b border-white/10 pb-4"
+              >
+                📸 Instagram
+              </a>
+            )}
 
           </div>
 

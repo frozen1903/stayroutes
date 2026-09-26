@@ -1,5 +1,7 @@
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import Link from 'next/link'
+import { whatsappUrl } from '../../../lib/site'
 
 const heroImage =
   'https://images.izmirburaya.com/Images/Deals/1200x1200/4f6023c7-aead-4daa-b2cc-1246d8ffb918.jpg'
@@ -129,12 +131,12 @@ export default function PamukkaleTour() {
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />
 
           <div className="relative z-10 flex min-h-screen flex-col justify-center px-6 pt-28 md:px-20">
-            <a
+            <Link
               href="/tours"
               className="mb-8 w-fit rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm text-gray-200 backdrop-blur-md transition-all hover:border-yellow-400/60 hover:text-yellow-400"
             >
               Back to Tours
-            </a>
+            </Link>
 
             <p className="mb-6 text-sm uppercase tracking-[5px] text-yellow-400">
               Ancient Turkey
@@ -151,7 +153,7 @@ export default function PamukkaleTour() {
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
-                href="https://wa.me/905555555555"
+                href={whatsappUrl()}
                 className="w-fit rounded-2xl bg-white px-8 py-5 font-bold text-black transition-all duration-300 hover:bg-yellow-400"
               >
                 Reserve via WhatsApp
@@ -340,7 +342,7 @@ export default function PamukkaleTour() {
                 </div>
 
                 <a
-                  href="https://wa.me/905555555555"
+                  href={whatsappUrl()}
                   className={
                     tourPackage.featured
                       ? 'inline-block rounded-2xl bg-black px-6 py-4 font-bold text-white transition-all hover:bg-neutral-900'

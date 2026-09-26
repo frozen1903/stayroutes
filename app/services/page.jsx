@@ -1,5 +1,6 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import { site } from '../../lib/site'
 
 const features = [
   {
@@ -45,7 +46,7 @@ export default function Services() {
       <div className="text-center mb-16">
 
         <p className="text-yellow-400 uppercase tracking-[4px] mb-4 text-sm">
-          Why Choose StayGuest
+          Why Choose {site.name}
         </p>
 
         <h2 className="text-4xl md:text-6xl font-black mb-6">

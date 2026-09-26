@@ -1,5 +1,7 @@
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import Link from 'next/link'
+import { whatsappUrl } from '../../../lib/site'
 
 export default function BosphorusDinnerCruise() {
   return (
@@ -31,12 +33,12 @@ export default function BosphorusDinnerCruise() {
 
           <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20">
 
-            <a
+            <Link
               href="/tours"
               className="text-gray-300 hover:text-yellow-400 transition-all mb-8 w-fit"
             >
               ← Back to Tours
-            </a>
+            </Link>
 
             <p className="uppercase tracking-[5px] text-yellow-400 mb-6 text-sm">
               Istanbul Experience
@@ -52,7 +54,7 @@ export default function BosphorusDinnerCruise() {
             </p>
 
             <a
-              href="https://wa.me/905555555555"
+              href={whatsappUrl()}
               className="bg-white text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-5 rounded-2xl w-fit font-bold"
             >
               Reserve via WhatsApp

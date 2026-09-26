@@ -1,10 +1,14 @@
 import './globals.css'
+import MobileNav from '../components/MobileNav'
+import { site } from '../lib/site'
 
 export const metadata = {
-  title: 'StayRoute',
-  
-  description: 'Digital Hotel Concierge',
-   icons: {
+  title: {
+    default: site.name,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
+  icons: {
     icon: '/favicon.png',
   },
 }
@@ -12,13 +16,15 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 }
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="pb-28 md:pb-0">
+        {children}
+        <MobileNav />
+      </body>
     </html>
   )
 }

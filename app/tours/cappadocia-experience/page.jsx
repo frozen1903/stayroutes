@@ -1,5 +1,6 @@
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import { whatsappUrl } from '../../../lib/site'
 
 export default function CappadociaExperience() {
   return (
@@ -36,7 +37,7 @@ export default function CappadociaExperience() {
             </p>
 
             <a
-              href="https://wa.me/905555555555"
+              href={whatsappUrl()}
               className="bg-white text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-5 rounded-2xl w-fit font-bold"
             >
               Reserve Experience
@@ -763,7 +764,7 @@ export default function CappadociaExperience() {
             </p>
 
             <a
-              href="https://wa.me/905555555555"
+              href={whatsappUrl()}
               className="bg-black text-white px-10 py-5 rounded-2xl inline-block font-bold hover:scale-105 transition-all"
             >
               Book Via WhatsApp

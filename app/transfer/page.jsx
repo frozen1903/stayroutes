@@ -3,6 +3,7 @@
 import Navbar from '../../components/Navbar'
 
 import Footer from '../../components/Footer'
+import { site, whatsappUrl } from '../../lib/site'
 import { useState } from "react"
 
 export default function Transfer() {
@@ -49,9 +50,9 @@ Gender: ${p.gender}`
 )
 .join("\n\n")
 
-const whatsappMessage = encodeURIComponent(`
+const whatsappMessage = `
 
-Hello StayRoute,
+Hello ${site.name},
 
 Transfer Request
 
@@ -64,7 +65,7 @@ ${passengerInfo}
 
 Please provide availability and pricing.
 
-`)
+`
 
 return (
 <> <Navbar />
@@ -457,7 +458,7 @@ return (
           </div>
 
           <a
-            href={`https://wa.me/905555555555?text=${whatsappMessage}`}
+            href={whatsappUrl(whatsappMessage)}
             className="bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 text-black font-bold rounded-2xl py-5 text-center text-lg mt-4"
           >
             Continue via WhatsApp
@@ -554,7 +555,7 @@ return (
         </p>
 
         <a
-          href={`https://wa.me/905555555555?text=${whatsappMessage}`}
+          href={whatsappUrl(whatsappMessage)}
           className="bg-black text-white px-10 py-5 rounded-2xl inline-block font-bold hover:scale-105 transition-all"
         >
           Talk To A Travel Expert

@@ -1,5 +1,6 @@
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import { whatsappUrl } from '../../../lib/site'
 
 export default function OldCityTour() {
   return (
@@ -38,7 +39,7 @@ export default function OldCityTour() {
             </p>
 
             <a
-              href="https://wa.me/905555555555"
+              href={whatsappUrl()}
               className="bg-white text-black hover:bg-yellow-400 transition-all duration-300 px-8 py-5 rounded-2xl w-fit font-bold"
             >
               Reserve Experience
@@ -258,7 +259,7 @@ export default function OldCityTour() {
               </div>
 
               <a
-                href="https://wa.me/905555555555"
+                href={whatsappUrl()}
                 className="bg-white/10 hover:bg-white/20 transition-all px-6 py-4 rounded-2xl inline-block"
               >
                 Select Package
@@ -289,7 +290,7 @@ export default function OldCityTour() {
               </div>
 
               <a
-                href="https://wa.me/905555555555"
+                href={whatsappUrl()}
                 className="bg-black text-white hover:bg-neutral-900 transition-all px-6 py-4 rounded-2xl inline-block"
               >
                 Select Package
@@ -315,7 +316,7 @@ export default function OldCityTour() {
               </div>
 
               <a
-                href="https://wa.me/905555555555"
+                href={whatsappUrl()}
                 className="bg-white/10 hover:bg-white/20 transition-all px-6 py-4 rounded-2xl inline-block"
               >
                 Select Package
@@ -567,7 +568,7 @@ export default function OldCityTour() {
     </p>
 
     <a
-      href="https://wa.me/905555555555"
+      href={whatsappUrl()}
       className="bg-black text-white px-10 py-5 rounded-2xl inline-block font-bold hover:scale-105 transition-all"
     >
       Talk To A Local Expert

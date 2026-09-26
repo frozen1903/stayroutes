@@ -2,6 +2,7 @@
 
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import { whatsappUrl } from '../../../lib/site'
 
 const plans = [
   {
@@ -159,7 +160,7 @@ export default function EsimPage() {
                 </div>
 
                 <a
-                  href="https://wa.me/905555555555"
+                  href={whatsappUrl()}
                   className={`px-6 py-4 rounded-2xl font-bold transition-all ${
                     plan.popular
                       ? "bg-black text-white hover:bg-neutral-900"

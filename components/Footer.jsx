@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import { site, whatsappUrl } from '../lib/site'
+
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 mt-20">
@@ -11,7 +14,7 @@ export default function Footer() {
           <div>
 
             <h2 className="text-4xl font-black mb-6">
-              StayGuest
+              {site.name}
             </h2>
 
             <p className="text-gray-400 leading-relaxed">
@@ -20,7 +23,24 @@ export default function Footer() {
 
           </div>
 
-         
+          {/* Explore */}
+
+          <div>
+
+            <h3 className="text-xl font-bold mb-6">
+              Explore
+            </h3>
+
+            <div className="flex flex-col gap-4 text-gray-300">
+
+              <Link href="/transfer">Airport Transfer</Link>
+              <Link href="/tours">Tours</Link>
+              <Link href="/tours/e-sim">eSIM Packages</Link>
+              <Link href="/services">Why Us</Link>
+
+            </div>
+
+          </div>
 
           {/* Contact */}
 
@@ -32,17 +52,15 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4 text-gray-300">
 
-              <a href="https://wa.me/905555555555">
+              <a href={whatsappUrl()}>
                 WhatsApp Concierge
               </a>
 
-              <a href="https://instagram.com">
-                Instagram
-              </a>
-
-              <a href="https://maps.google.com">
-                Google Maps
-              </a>
+              {site.social.instagram && (
+                <a href={site.social.instagram}>
+                  Instagram
+                </a>
+              )}
 
             </div>
 
@@ -54,7 +72,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-14 pt-8 text-center text-gray-500 text-sm">
 
-          © 2026 StayGuest. All rights reserved.
+          © {new Date().getFullYear()} {site.name}. All rights reserved.
 
         </div>
 

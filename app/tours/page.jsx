@@ -3,6 +3,7 @@
 
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
+import Link from 'next/link'
 
 import { useEffect } from "react"
 
@@ -104,8 +105,8 @@ const categories = [
        {
         name: "Sapanca",
         description:
-          "Visit the Sapanca.",
-          link: "/tours/sapanca-masukıye",
+          "Lake Sapanca and Maşukiye nature escape.",
+          link: "/tours/sapanca-masukiye",
         image:
           "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
       },
@@ -202,15 +203,11 @@ export default function ToursPage() {
 
             {/* Category Header */}
 
-            <div className="flex items-center justify-between mb-8">
+            <div className="mb-8">
 
               <h2 className="text-3xl md:text-5xl font-black">
                 {category.title}
               </h2>
-
-              <button className="text-yellow-400 text-sm uppercase tracking-[3px]">
-                Explore
-              </button>
 
             </div>
 
@@ -249,12 +246,12 @@ export default function ToursPage() {
                       {tour.description}
                     </p>
 
-                    <a
+                    <Link
                       href={tour.link}
                       className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
                     >
                       View Experience
-                    </a>
+                    </Link>
 
                   </div>
 

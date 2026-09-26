@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const vehicles = [
   {
     title: "Mercedes VIP Vito",
@@ -55,9 +57,12 @@ export default function Fleet() {
                 {item.title}
               </h3>
 
-              <button className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit">
-                Explore Vehicle
-              </button>
+              <Link
+                href="/transfer#transfer-form"
+                className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
+              >
+                Book This Vehicle
+              </Link>
 
             </div>
 

@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import { whatsappUrl } from '../lib/site'
+
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center text-center px-6 relative overflow-hidden">
@@ -29,32 +32,32 @@ export default function Hero() {
         </h1>
 
         <p className="text-gray-300 text-lg md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed">
-          Premium hotel experience, airport transfers, tours and guest services directly from your phone.
+          VIP airport transfers, curated tours and travel concierge services across Turkey, directly from your phone.
         </p>
 
         {/* Buttons */}
         <div className="flex flex-col md:flex-row gap-5 justify-center">
 
-          <a
+          <Link
             href="/transfer"
             className="bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 text-black px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl"
           >
             Airport Transfer
-          </a>
+          </Link>
 
           <a
-            href="https://wa.me/905555555555"
+            href={whatsappUrl()}
             className="border border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 px-10 py-5 rounded-2xl font-semibold text-lg"
           >
-            WhatsApp Reception
+            WhatsApp Concierge
           </a>
 
-            <a
+            <Link
             href="/tours"
             className="bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 text-black px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl"
           >
             Explore Tours
-          </a>
+          </Link>
 
         </div>
 

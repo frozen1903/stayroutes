@@ -1,14 +1,18 @@
+import { whatsappUrl } from '../lib/site'
+
 const items = [
   {
     title: "Airport Transfer",
     desc: "Private luxury airport transportation.",
+    href: "/transfer",
     image:
       "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1974&auto=format&fit=crop"
   },
 
   {
-    title: "Room Services",
-    desc: "Cleaning, towels and guest requests.",
+    title: "eSIM Packages",
+    desc: "Stay connected from the moment you land.",
+    href: "/tours/e-sim",
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
   },
@@ -16,13 +20,15 @@ const items = [
   {
     title: "Luxury Tours",
     desc: "Discover unforgettable experiences.",
+    href: "/tours",
     image:
       "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=2070&auto=format&fit=crop"
   },
 
   {
-    title: "24/7 Reception",
-    desc: "Instant WhatsApp guest support.",
+    title: "24/7 Concierge",
+    desc: "Instant WhatsApp travel support.",
+    href: whatsappUrl(),
     image:
       "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070&auto=format&fit=crop"
   }
@@ -36,8 +42,9 @@ export default function Services() {
 
         {items.map((item, index) => (
 
-          <div
+          <a
             key={index}
+            href={item.href}
             className="relative overflow-hidden rounded-3xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[350px] flex items-end"
           >
 
@@ -64,7 +71,7 @@ export default function Services() {
 
             </div>
 
-          </div>
+          </a>
 
         ))}
 
