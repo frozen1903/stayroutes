@@ -164,8 +164,8 @@ return (
 
           <div className="relative h-[320px]">
             <Image
-              src="https://images.unsplash.com/photo-1688619103602-35c5b27a6619"
-              alt="White Mercedes Sprinter van"
+              src="https://images.unsplash.com/photo-1750210505997-ed85e9f8cb12"
+              alt="Black leather VIP seats inside a Mercedes van"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"

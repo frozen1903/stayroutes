@@ -11,7 +11,7 @@ const vehicles = [
   {
     title: "Mercedes Sprinter",
     image:
-      "https://images.unsplash.com/photo-1688619103602-35c5b27a6619?q=80&w=2070&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1750210505997-ed85e9f8cb12?q=80&w=2070&auto=format&fit=crop"
   }
 ]
 
