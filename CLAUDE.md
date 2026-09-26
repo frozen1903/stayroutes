@@ -27,12 +27,13 @@ app/
   page.jsx              ana sayfa
   tours/page.jsx        tur listesi (data'dan, kategori bazlı)
   tours/[slug]/page.jsx tüm tur detay sayfaları (generateStaticParams + generateMetadata, dynamicParams=false)
-  transfer/page.jsx     metadata + TransferPage.jsx (client, form -> hazır WhatsApp mesajı)
+  transfer/page.jsx     metadata + TransferPage.jsx (sayfa içeriği, sunucu bileşeni)
   esim/page.jsx         eSIM paketleri
   services/page.jsx     "Why Us"
   sitemap.js, robots.js, not-found.jsx
 components/
   TourDetail.jsx        tur detay şablonu; tüm bölümler veriye göre isteğe bağlı render edilir
+  TransferForm.jsx      transfer formu (client): doğrulama, araç önerisi, ?vehicle=vito|sprinter ön seçimi -> WhatsApp mesajı
   DragScroll.jsx        masaüstünde sürükleyerek yatay kaydırma (client)
   Navbar.jsx            üst menü + mobil çekmece menü (client)
   MobileNav.jsx         mobil alt menü + masaüstü WhatsApp butonu (layout'ta, her sayfada)
@@ -67,8 +68,8 @@ next.config.js          custom image loader; redirect'ler: /tours/sapanca-masuk�
 ## Bilinen sorunlar
 
 - Yorumlar (`Reviews.jsx`) uydurma isimler.
-- Transfer formu: doğrulama yok, geçmiş tarih seçilebiliyor, state doğrudan mutate ediliyor
-  (`updated[index].name = ...`), uçuş no / saat / otel / bagaj alanları yok, gereksiz cinsiyet alanı var.
+- Unsplash'te ücretsiz Truva antik kenti, Maşukiye ve siyah Sprinter dış çekimi yok; yerine en yakın görseller kullanıldı.
+  Kullanıcının kendi araç/tur fotoğrafları gelirse `public/`'e konup bunlarla değiştirilmeli.
 
 ## Yol haritası
 
@@ -95,8 +96,9 @@ Durumlar: [ ] yapılacak, [x] tamam. İş bitince burayı güncelle.
 
 ### Faz 2 — Dönüşüm
 - [x] Her tur/paket butonu için hazır WhatsApp mesajı (tur + paket adı)
-- [ ] Paketlere "from €..." fiyat bilgisi
-- [ ] Transfer formunu geliştir: yön, uçuş no, saat, otel/adres, bagaj, çocuk koltuğu, telefon, doğrulama
+- [ ] Paketlere "from €..." fiyat bilgisi (kullanıcı fiyatları en son verecek)
+- [x] Transfer formu: yön (geliş/gidiş/gidiş-dönüş), uçuş no, saat, otel/adres, yolcu, çocuk koltuğu, bagaj,
+      araç önerisi, iletişim, doğrulama
 - [ ] Gerçek Google/TripAdvisor yorumları
 
 ### Faz 3 — Concierge özellikleri

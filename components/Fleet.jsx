@@ -3,13 +3,15 @@ import Link from 'next/link'
 
 const vehicles = [
   {
+    key: "vito",
     title: "Mercedes VIP Vito",
     image:
       "https://images.unsplash.com/photo-1765461734605-34657fa04db2?q=80&w=2070&auto=format&fit=crop"
   },
 
   {
-    title: "Mercedes Sprinter",
+    key: "sprinter",
+    title: "Mercedes VIP Sprinter",
     image:
       "https://images.unsplash.com/photo-1750210505997-ed85e9f8cb12?q=80&w=2070&auto=format&fit=crop"
   }
@@ -61,7 +63,7 @@ export default function Fleet() {
               </h3>
 
               <Link
-                href="/transfer#transfer-form"
+                href={`/transfer?vehicle=${item.key}#transfer-form`}
                 className="bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300 px-6 py-4 rounded-2xl w-fit"
               >
                 Book This Vehicle

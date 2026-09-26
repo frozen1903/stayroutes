@@ -20,3 +20,8 @@ body{
 .drag-scroll {
   user-select: none;
 }
+
+select option {
+  background: #07111f;
+  color: white;
+}

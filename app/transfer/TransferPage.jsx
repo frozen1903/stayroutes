@@ -1,72 +1,20 @@
-"use client"
-
 import Image from 'next/image'
 import Navbar from '../../components/Navbar'
-
 import Footer from '../../components/Footer'
+import TransferForm from '../../components/TransferForm'
 import { site, whatsappUrl } from '../../lib/site'
-import { useState } from "react"
+
+const customTransferMessage = `Hello ${site.name},
+
+I need a custom transfer.
+From:
+To:
+Date:
+Guests:
+
+Please provide availability and pricing.`
 
 export default function TransferPage() {
-
-const [airport, setAirport] = useState("")
-const [date, setDate] = useState("")
-const [vehicle, setVehicle] = useState("")
-const [guests, setGuests] = useState(1)
-
-const [passengers, setPassengers] = useState([
-{
-name: "",
-gender: ""
-}
-])
-
-const handleGuestChange = (value) => {
-
-
-const count = Number(value)
-
-setGuests(count)
-
-const newPassengers = Array.from(
-  { length: count },
-  (_, index) =>
-    passengers[index] || {
-      name: "",
-      gender: ""
-    }
-)
-
-setPassengers(newPassengers)
-
-}
-
-const passengerInfo = passengers
-.map(
-(p, index) =>
-`Passenger ${index + 1}
-
-Name: ${p.name}
-Gender: ${p.gender}`
-)
-.join("\n\n")
-
-const whatsappMessage = `
-
-Hello ${site.name},
-
-Transfer Request
-
-Airport: ${airport}
-Date: ${date}
-Guests: ${guests}
-Vehicle: ${vehicle}
-
-${passengerInfo}
-
-Please provide availability and pricing.
-
-`
 
 return (
 <> <Navbar />
@@ -303,10 +251,10 @@ return (
 
     <section
       id="transfer-form"
-      className="px-6 pb-24"
+      className="px-6 pb-24 scroll-mt-24"
     >
 
-      <div className="max-w-5xl mx-auto bg-white/10 border border-white/10 backdrop-blur-xl rounded-[40px] p-8 md:p-12">
+      <div className="max-w-5xl mx-auto bg-white/10 border border-white/10 backdrop-blur-xl rounded-[32px] md:rounded-[40px] p-5 md:p-12">
 
         <p className="uppercase tracking-[4px] text-yellow-400 mb-5 text-sm">
           Transfer Request
@@ -316,167 +264,7 @@ return (
           Book Your Transfer
         </h2>
 
-        <div className="grid gap-6">
-
-          <div>
-
-            <label className="text-sm text-gray-400 block mb-3">
-              Airports
-            </label>
-
-            <select
-              value={airport}
-              onChange={(e) => setAirport(e.target.value)}
-              className="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4"
-            >
-              <option value="">Select Airport</option>
-              <option>IST Airport</option>
-              <option>SAW Airport</option>
-            </select>
-
-          </div>
-
-          <div>
-
-            <label className="text-sm text-gray-400 block mb-3">
-              Arrival Date
-            </label>
-
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4"
-            />
-
-          </div>
-
-          <div>
-
-            <label className="text-sm text-gray-400 block mb-3">
-              Guests
-            </label>
-
-            <select
-              value={guests}
-              onChange={(e) => handleGuestChange(e.target.value)}
-              className="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4"
-            >
-
-              {[...Array(12)].map((_, i) => (
-                <option key={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-
-            </select>
-
-          </div>
-
-          <div>
-
-            <label className="text-sm text-gray-400 block mb-3">
-              Vehicle Type
-            </label>
-
-            <select
-              value={vehicle}
-              onChange={(e) => setVehicle(e.target.value)}
-              className="w-full bg-black/30 border border-white/10 rounded-2xl px-5 py-4"
-            >
-
-              <option value="">
-                Select Vehicle
-              </option>
-
-              <option>
-                VIP Mercedes Vito
-              </option>
-
-              <option>
-                VIP Mercedes Sprinter
-                </option>
-
-            </select>
-
-          </div>
-
-          {/* Dynamic Passengers */}
-
-          <div className="space-y-6">
-
-            {passengers.map((passenger, index) => (
-
-              <div
-                key={index}
-                className="bg-black/20 border border-white/10 rounded-[32px] p-6"
-              >
-
-                <h3 className="text-2xl font-bold mb-6">
-                  Passenger {index + 1}
-                </h3>
-
-               <div className="grid md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Name Surname"
-                    value={passenger.name}
-                    onChange={(e) => {
-
-                      const updated = [...passengers]
-
-                      updated[index].name = e.target.value
-
-                      setPassengers(updated)
-
-                    }}
-                    className="bg-black/30 border border-white/10 rounded-2xl px-5 py-4"
-                  />
-
-                  <select
-                    value={passenger.gender}
-                    onChange={(e) => {
-
-                      const updated = [...passengers]
-
-                      updated[index].gender = e.target.value
-
-                      setPassengers(updated)
-
-                    }}
-                    className="bg-black/30 border border-white/10 rounded-2xl px-5 py-4"
-                  >
-
-                    <option value="">
-                      Select Gender
-                    </option>
-
-                    <option value="Male">
-                      Male
-                    </option>
-
-                    <option value="Female">
-                      Female
-                    </option>
-
-                  </select>
-
-                </div>
-
-              </div>
-
-            ))}
-
-          </div>
-
-          <a
-            href={whatsappUrl(whatsappMessage)}
-            className="bg-yellow-500 hover:bg-yellow-400 transition-all duration-300 text-black font-bold rounded-2xl py-5 text-center text-lg mt-4"
-          >
-            Continue via WhatsApp
-          </a>
-
-        </div>
+        <TransferForm />
 
       </div>
 
@@ -567,7 +355,7 @@ return (
         </p>
 
         <a
-          href={whatsappUrl(whatsappMessage)}
+          href={whatsappUrl(customTransferMessage)}
           className="bg-black text-white px-10 py-5 rounded-2xl inline-block font-bold hover:scale-105 transition-all"
         >
           Talk To A Travel Expert
